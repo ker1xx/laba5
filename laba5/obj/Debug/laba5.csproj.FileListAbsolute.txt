@@ -1,0 +1,32 @@
+C:\Users\я\Desktop\laba5-master\laba5\bin\Debug\laba5.exe.config
+C:\Users\я\Desktop\laba5-master\laba5\bin\Debug\laba5.exe
+C:\Users\я\Desktop\laba5-master\laba5\bin\Debug\laba5.pdb
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.csproj.AssemblyReference.cache
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.csproj.SuggestedBindingRedirects.cache
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\App.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5_MarkupCompile.cache
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5_MarkupCompile.lref
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.g.resources
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.Properties.Resources.resources
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.csproj.GenerateResource.cache
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.csproj.CoreCompileInputs.cache
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.exe
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.pdb
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\AdminPanel.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\cheks.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\employees.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\markets.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\storage.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\AdminPanel.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\cheks.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\employees.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\markets.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\storage.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\CashierPanel.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\HistoryOfOrders.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\Order.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\CashierPanel.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\HistoryOfOrders.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\Order.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\MainWindow.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\MainWindow.baml
