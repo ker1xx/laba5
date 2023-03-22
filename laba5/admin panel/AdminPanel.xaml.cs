@@ -23,7 +23,6 @@ namespace laba5
         employeeTableAdapter emp = new employeeTableAdapter();
         marketTableAdapter market = new marketTableAdapter();
         storageTableAdapter storageData = new storageTableAdapter();
-        Button LastPickedutton;
         public AdminPanel()
         {
             InitializeComponent();

@@ -2844,11 +2844,11 @@ namespace laba5 {
             
             private global::System.Data.DataColumn columnadress;
             
-            private global::System.Data.DataColumn columnbegin_working_time;
-            
-            private global::System.Data.DataColumn columnend_working_time;
-            
             private global::System.Data.DataColumn columnname;
+            
+            private global::System.Data.DataColumn columntime;
+            
+            private global::System.Data.DataColumn columntime1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -2901,25 +2901,25 @@ namespace laba5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn begin_working_timeColumn {
-                get {
-                    return this.columnbegin_working_time;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn end_working_timeColumn {
-                get {
-                    return this.columnend_working_time;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn nameColumn {
                 get {
                     return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn timeColumn {
+                get {
+                    return this.columntime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn time1Column {
+                get {
+                    return this.columntime1;
                 }
             }
             
@@ -2960,14 +2960,14 @@ namespace laba5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public marketRow AddmarketRow(string adress, System.DateTime begin_working_time, System.DateTime end_working_time, string name) {
+            public marketRow AddmarketRow(string adress, string name, System.TimeSpan time, System.TimeSpan time1) {
                 marketRow rowmarketRow = ((marketRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         adress,
-                        begin_working_time,
-                        end_working_time,
-                        name};
+                        name,
+                        time,
+                        time1};
                 rowmarketRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmarketRow);
                 return rowmarketRow;
@@ -2999,9 +2999,9 @@ namespace laba5 {
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
                 this.columnadress = base.Columns["adress"];
-                this.columnbegin_working_time = base.Columns["begin working time"];
-                this.columnend_working_time = base.Columns["end working time"];
                 this.columnname = base.Columns["name"];
+                this.columntime = base.Columns["time"];
+                this.columntime1 = base.Columns["time1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3011,12 +3011,12 @@ namespace laba5 {
                 base.Columns.Add(this.columnid);
                 this.columnadress = new global::System.Data.DataColumn("adress", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnadress);
-                this.columnbegin_working_time = new global::System.Data.DataColumn("begin working time", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbegin_working_time);
-                this.columnend_working_time = new global::System.Data.DataColumn("end working time", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnend_working_time);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
+                this.columntime = new global::System.Data.DataColumn("time", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntime);
+                this.columntime1 = new global::System.Data.DataColumn("time1", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntime1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -3027,10 +3027,10 @@ namespace laba5 {
                 this.columnid.Unique = true;
                 this.columnadress.AllowDBNull = false;
                 this.columnadress.MaxLength = 255;
-                this.columnbegin_working_time.AllowDBNull = false;
-                this.columnend_working_time.AllowDBNull = false;
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 255;
+                this.columntime.ReadOnly = true;
+                this.columntime1.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4481,28 +4481,6 @@ namespace laba5 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime begin_working_time {
-                get {
-                    return ((global::System.DateTime)(this[this.tablemarket.begin_working_timeColumn]));
-                }
-                set {
-                    this[this.tablemarket.begin_working_timeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime end_working_time {
-                get {
-                    return ((global::System.DateTime)(this[this.tablemarket.end_working_timeColumn]));
-                }
-                set {
-                    this[this.tablemarket.end_working_timeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string name {
                 get {
                     return ((string)(this[this.tablemarket.nameColumn]));
@@ -4510,6 +4488,62 @@ namespace laba5 {
                 set {
                     this[this.tablemarket.nameColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.TimeSpan time {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tablemarket.timeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'time\' в таблице \'market\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemarket.timeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.TimeSpan time1 {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tablemarket.time1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'time1\' в таблице \'market\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablemarket.time1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstimeNull() {
+                return this.IsNull(this.tablemarket.timeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettimeNull() {
+                this[this.tablemarket.timeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istime1Null() {
+                return this.IsNull(this.tablemarket.time1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settime1Null() {
+                this[this.tablemarket.time1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7299,8 +7333,9 @@ SELECT id, name, surname, lastname, [job title id], salary FROM employee WHERE (
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT employee.id, employee.name, surname, lastname, salary, [job title].name\r\nf" +
-                "rom employee inner join [job title] on employee.[job title id] = [job title].id";
+            this._commandCollection[2].CommandText = "SELECT employee.id, employee.name, surname, lastname, salary, [job title].name, [" +
+                "job title id]\r\nfrom employee inner join [job title] on employee.[job title id] =" +
+                " [job title].id";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -7314,13 +7349,9 @@ SELECT id, name, surname, lastname, [job title id], salary FROM employee WHERE (
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salary", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"UPDATE       employee
-SET                name = @name, surname = @surname, lastname = @lastname, [job title id] = @job_title_id, salary = @salary
-WHERE        (id = @Original_id) AND (@IsNull_lastname = 1) AND (@IsNull_job_title_id = 1) OR
-                         (id = @Original_id) AND (@IsNull_job_title_id = 1) OR
-                         (id = @Original_id) AND (@IsNull_lastname = 1) OR
-                         (id = @Original_id); 
-";
+            this._commandCollection[4].CommandText = "UPDATE       employee\r\nSET                name = @name, surname = @surname, lastn" +
+                "ame = @lastname, [job title id] = @job_title_id, salary = @salary\r\nWHERE        " +
+                "(id = @Original_id);   \r\n";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@surname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7328,8 +7359,6 @@ WHERE        (id = @Original_id) AND (@IsNull_lastname = 1) AND (@IsNull_job_tit
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@job_title_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "job title id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@salary", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "salary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lastname", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastname", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_job_title_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "job title id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7667,7 +7696,7 @@ WHERE        (id = @Original_id) AND (@IsNull_lastname = 1) AND (@IsNull_job_tit
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string name, string surname, string lastname, global::System.Nullable<int> job_title_id, decimal salary, int Original_id, global::System.Nullable<int> IsNull_lastname, global::System.Nullable<int> IsNull_job_title_id) {
+        public virtual int UpdateQuery(string name, string surname, string lastname, global::System.Nullable<int> job_title_id, decimal salary, int Original_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
@@ -7695,18 +7724,6 @@ WHERE        (id = @Original_id) AND (@IsNull_lastname = 1) AND (@IsNull_job_tit
             }
             command.Parameters[4].Value = ((decimal)(salary));
             command.Parameters[5].Value = ((int)(Original_id));
-            if ((IsNull_lastname.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(IsNull_lastname.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_job_title_id.HasValue == true)) {
-                command.Parameters[7].Value = ((int)(IsNull_job_title_id.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8791,43 +8808,27 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)";
             tableMapping.DataSetTable = "market";
             tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("adress", "adress");
-            tableMapping.ColumnMappings.Add("begin working time", "begin working time");
-            tableMapping.ColumnMappings.Add("end working time", "end working time");
             tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("time", "time");
+            tableMapping.ColumnMappings.Add("time1", "time1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[market] WHERE (([id] = @Original_id) AND ([adress] = @Original" +
-                "_adress) AND ([begin working time] = @Original_begin_working_time) AND ([end wor" +
-                "king time] = @Original_end_working_time) AND ([name] = @Original_name))";
+                "_adress) AND ([name] = @Original_name))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_begin_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "begin working time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_end_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "end working time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[market] ([adress], [begin working time], [end working time], [name]) VALUES (@adress, @begin_working_time, @end_working_time, @name);
-SELECT id, adress, [begin working time], [end working time], name FROM market WHERE (id = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@begin_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "begin working time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "end working time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[market] SET [adress] = @adress, [begin working time] = @begin_working_time, [end working time] = @end_working_time, [name] = @name WHERE (([id] = @Original_id) AND ([adress] = @Original_adress) AND ([begin working time] = @Original_begin_working_time) AND ([end working time] = @Original_end_working_time) AND ([name] = @Original_name));
-SELECT id, adress, [begin working time], [end working time], name FROM market WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[market] SET [adress] = @adress, [name] = @name WHERE (([id] = @Original_id) AND ([adress] = @Original_adress) AND ([name] = @Original_name));
+SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working time] AS time) AS time, name FROM market WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@begin_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "begin working time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@end_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "end working time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_adress", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "adress", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_begin_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "begin working time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_end_working_time", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "end working time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -8845,8 +8846,8 @@ SELECT id, adress, [begin working time], [end working time], name FROM market WH
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, adress, [begin working time], [end working time], name FROM dbo.market" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT id, adress, cast([begin working time] as time) [time], cast([end working t" +
+                "ime] as time) [time], name FROM dbo.market";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -8932,7 +8933,7 @@ SELECT id, adress, [begin working time], [end working time], name FROM market WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_adress, System.DateTime Original_begin_working_time, System.DateTime Original_end_working_time, string Original_name) {
+        public virtual int Delete(int Original_id, string Original_adress, string Original_name) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_adress == null)) {
                 throw new global::System.ArgumentNullException("Original_adress");
@@ -8940,13 +8941,11 @@ SELECT id, adress, [begin working time], [end working time], name FROM market WH
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_adress));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_begin_working_time));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_end_working_time));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_name));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8967,73 +8966,34 @@ SELECT id, adress, [begin working time], [end working time], name FROM market WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string adress, System.DateTime begin_working_time, System.DateTime end_working_time, string name) {
-            if ((adress == null)) {
-                throw new global::System.ArgumentNullException("adress");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(adress));
-            }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(begin_working_time));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(end_working_time));
-            if ((name == null)) {
-                throw new global::System.ArgumentNullException("name");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(name));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string adress, System.DateTime begin_working_time, System.DateTime end_working_time, string name, int Original_id, string Original_adress, System.DateTime Original_begin_working_time, System.DateTime Original_end_working_time, string Original_name, int id) {
+        public virtual int Update(string adress, string name, int Original_id, string Original_adress, string Original_name, int id) {
             if ((adress == null)) {
                 throw new global::System.ArgumentNullException("adress");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(adress));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(begin_working_time));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(end_working_time));
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(name));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(name));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_id));
             if ((Original_adress == null)) {
                 throw new global::System.ArgumentNullException("Original_adress");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_adress));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_adress));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_begin_working_time));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_end_working_time));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_name));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9054,8 +9014,8 @@ SELECT id, adress, [begin working time], [end working time], name FROM market WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string adress, System.DateTime begin_working_time, System.DateTime end_working_time, string name, int Original_id, string Original_adress, System.DateTime Original_begin_working_time, System.DateTime Original_end_working_time, string Original_name) {
-            return this.Update(adress, begin_working_time, end_working_time, name, Original_id, Original_adress, Original_begin_working_time, Original_end_working_time, Original_name, Original_id);
+        public virtual int Update(string adress, string name, int Original_id, string Original_adress, string Original_name) {
+            return this.Update(adress, name, Original_id, Original_adress, Original_name, Original_id);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

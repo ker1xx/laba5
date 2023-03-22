@@ -34,12 +34,7 @@ namespace laba5
             Display.ItemsSource = emp.names();
             Display.IsReadOnly = true;
             AdminPanel = adminPanel;
-            var info = emp.GetData();
-            foreach (DataRow data in info.Rows)
-            {
-                AmountOfEmployees++;
-                FullSalary += Convert.ToInt32(data[5]);
-            }
+            AdditionalInfo();
             Info1.Text = "Общее количество сотрудников: " + AmountOfEmployees.ToString();
             Info2.Text = "Общая сумма зарплаты за месяц: " + FullSalary.ToString();
             JobTitleInput.ItemsSource = job.GetData();
@@ -60,40 +55,116 @@ namespace laba5
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             if (NameInput.Text == string.Empty || SurnameInput.Text == string.Empty || SalaryInput.Text == string.Empty || JobTitleInput.SelectedIndex == -1)
+            {
+
                 ErrorMessage.Text = "Вы заполнили не все поля";
+            }
             else
             {
-                try
+                if (LastNameInput.Text == string.Empty)
                 {
-                    emp.InsertQuery((string)NameInput.Text, (string)SurnameInput.Text, (string)SalaryInput.Text, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text));
-                    Display.ItemsSource = emp.names();
+                    try
+                    {
+                        emp.InsertQuery((string)NameInput.Text, (string)SurnameInput.Text, null, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text));
+                        updated();
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorMessage.Text = "Вы ввели неверные значения";
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    ErrorMessage.Text = "Вы ввели неверные значения";
+                    try
+                    {
+                        emp.InsertQuery((string)NameInput.Text, (string)SurnameInput.Text, (string)LastNameInput.Text, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text));
+                        updated();
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorMessage.Text = "Вы ввели неверные значения";
+                    }
                 }
+                Display.ItemsSource = emp.names();
             }
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
+            var item = Display.SelectedItem as DataRowView;
+            if (NameInput.Text == string.Empty || SurnameInput.Text == string.Empty || SalaryInput.Text == string.Empty || JobTitleInput.SelectedIndex == -1 || SalaryInput.Text.Any(x => char.IsLetter(x)))
+                ErrorMessage.Text = "Вы заполнили не все поля";
+            else
+            {
 
+                if (LastNameInput.Text == string.Empty)
+                {
+                    try
+                    {
+                        emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, null, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
+                        updated();
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorMessage.Text = "Вы ввели неверные значения";
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, (string)LastNameInput.Text, (int)JobTitleInput.SelectedValue, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
+                        updated();
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorMessage.Text = "Вы ввели неверные значения";
+                    }
+                    Display.ItemsSource = emp.names();
+                }
+            }
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Display.SelectedItem != null)
+            {
+                var item = Display.SelectedItem as DataRowView;
+                emp.DeleteQuery((int)item[0]);
+                updated();
+            }
+            else
+                ErrorMessage.Text = "Вы не выбрали элемент!";
         }
 
         private void Display_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var item = Display.SelectedItem as DataRowView;
-            NameInput.Text = (string)item[1];
-            SurnameInput.Text = (string)item[2];
-            LastNameInput.Text = (string)item[3];
-            SalaryInput.Text = Convert.ToString(item[5]);
-            var a  = item[6];
-/*         JobTitleInput.SelectedValue = a.ToString();*/
+            if (Display.SelectedItem != null)
+            {
+                var item = Display.SelectedItem as DataRowView;
+                NameInput.Text = (string)item[1];
+                SurnameInput.Text = (string)item[2];
+                LastNameInput.Text = (string)item[3];
+                SalaryInput.Text = Convert.ToString(item[5]);
+                JobTitleInput.SelectedValue = Convert.ToString((int)item[4]);
+                ErrorMessage.Text = string.Empty;
+            }
+        }
+        private void AdditionalInfo()
+        {
+            var info = emp.GetData();
+            foreach (DataRow data in info.Rows)
+            {
+                AmountOfEmployees++;
+                FullSalary += Convert.ToInt32(data[5]);
+            }
+            Info1.Text = "Общее количество сотрудников: " + AmountOfEmployees.ToString();
+            Info2.Text = "Общая сумма зарплаты за месяц: " + FullSalary.ToString();
+        }
+        private void updated()
+        {
+            Display.ItemsSource = emp.names();
+            ErrorMessage.Text = string.Empty;
         }
     }
 }

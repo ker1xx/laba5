@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace laba5.DataSet2TableAdapters {
+    
+    
+    public partial class employeeTableAdapter {
+    }
+}

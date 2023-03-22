@@ -21,7 +21,7 @@ namespace laba5
         public MainWindow()
         {
             InitializeComponent();
-
+            LoginInput.Focus();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)

@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\laba5"
+    "\\laba5",
+    "\\laba5\\admin panel"
   ],
-  "SelectedNode": "\\laba5\\DataSet2.cs",
+  "SelectedNode": "\\laba5\\admin panel\\employees.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
