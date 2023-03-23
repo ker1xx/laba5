@@ -188,5 +188,6 @@ git_stats/*
 
 *.ncrunchproject
 StyleCop.Cache
-bin
-obj
+laba5/bin/*
+*.vs/*
+laba5/obj/*
