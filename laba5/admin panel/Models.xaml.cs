@@ -23,7 +23,6 @@ namespace laba5
     public partial class Models : Page
     {
         modelTableAdapter model = new modelTableAdapter();
-        int AmountOfModels = 0;
         public Models()
         {
             InitializeComponent();
@@ -93,10 +92,7 @@ namespace laba5
         }
         private void AdditionalInfo()
         {
-            var info = model.GetData();
-            foreach (DataRow data in info.Rows)
-                AmountOfModels++;
-            Info1.Text = "Общее количество поставщиков: " + AmountOfModels;
+            Info1.Text = "Общее количество поставщиков: " + Display.Items.Count.ToString();
         }
     }
 }

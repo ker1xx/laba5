@@ -5225,7 +5225,7 @@ namespace laba5.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5763,7 +5763,7 @@ SELECT id, id_model, amount, id_dealer, first_price FROM storage WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6324,7 +6324,7 @@ SELECT id, [employee id], [market id], [total money], date FROM [check info] WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6413,7 +6413,7 @@ WHERE        (id = @Original_id) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet2.check_infoDataTable GetDataBy3() {
+        public virtual DataSet2.check_infoDataTable names() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             DataSet2.check_infoDataTable dataTable = new DataSet2.check_infoDataTable();
             this.Adapter.Fill(dataTable);
@@ -6845,7 +6845,7 @@ WHERE        (id = @Original_id) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7325,7 +7325,7 @@ SELECT id, name, surname, lastname, [job title id], salary FROM employee WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7923,7 +7923,7 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8430,7 +8430,7 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8847,7 +8847,7 @@ SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9280,7 +9280,7 @@ SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9710,7 +9710,7 @@ SELECT id, [order info id], [goods in order id], profit FROM [order] WHERE (id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.kamputer;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -24,7 +24,6 @@ namespace laba5
     public partial class Dealers : Page
     {
         dealerTableAdapter dealers = new dealerTableAdapter();
-        int AmountOfDealers = 0;
         public Dealers()
         {
             InitializeComponent();
@@ -95,10 +94,7 @@ namespace laba5
         }
         private void AdditionalInfo()
         {
-            var info = dealers.GetData();
-            foreach (DataRow data in info.Rows)
-                AmountOfDealers++;
-            Info1.Text = "Общее количество поставщиков: " + AmountOfDealers;
+            Info1.Text = "Общее количество поставщиков: " + Display.Items.Count.ToString();
         }
     }
 }

@@ -25,7 +25,6 @@ namespace laba5
     {
         employeeTableAdapter emp = new employeeTableAdapter();
         job_titleTableAdapter job = new job_titleTableAdapter();
-        int AmountOfEmployees = 0;
         int FullSalary = 0;
         AdminPanel AdminPanel;
         public employees(AdminPanel AdminPanel)
@@ -156,10 +155,9 @@ namespace laba5
             var info = emp.GetData();
             foreach (DataRow data in info.Rows)
             {
-                AmountOfEmployees++;
                 FullSalary += Convert.ToInt32(data[5]);
             }
-            Info1.Text = "Общее количество сотрудников: " + AmountOfEmployees.ToString();
+            Info1.Text = "Общее количество сотрудников: " + Display.Items.Count.ToString();
             Info2.Text = "Общая сумма зарплаты за месяц: " + FullSalary.ToString();
         }
         private void updated()

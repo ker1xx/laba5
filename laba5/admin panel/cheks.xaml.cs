@@ -1,5 +1,7 @@
-﻿using System;
+﻿using laba5.DataSet2TableAdapters;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +22,24 @@ namespace laba5
     /// </summary>
     public partial class cheks : Page
     {
-
+        check_infoTableAdapter check = new check_infoTableAdapter();
+        int ChecksCount = 0;
         public cheks()
         {
             InitializeComponent();
+            Display.ItemsSource = check.names();
+            int previoudid = 0;
+            foreach (DataRow name in check.names())
+            {
+                if (previoudid != (int)name[0])
+                {
+                    previoudid++;
+                    ChecksCount++;
+                }
+
+            }
+            Info1.Text = "Общее количество чеков: " + ChecksCount.ToString();
+            Info2.Text
         }
     }
 }

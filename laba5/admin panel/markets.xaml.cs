@@ -12,7 +12,6 @@ namespace laba5
     public partial class markets : Page
     {
         marketTableAdapter market = new marketTableAdapter();
-        int AmountOfShops = 0;
         public markets()
         {
             InitializeComponent();
@@ -72,10 +71,7 @@ namespace laba5
         }
         private void AdditionalInfo()
         {
-            var info = market.GetData();
-            foreach (DataRow data in info.Rows)
-                AmountOfShops++;
-            Info1.Text = "Общее количество магазинов: " + AmountOfShops;
+            Info1.Text = "Общее количество магазинов: " + Display.Items.Count.ToString();
         }
         private void updated()
         {
@@ -94,16 +90,6 @@ namespace laba5
             EndInput.Text = ((TimeSpan)item[4]).ToString();
             ErrorMessage.Text = string.Empty;
             }
-        }
-
-        private void ModelsButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-
-        }
-
-        private void MarketsButton_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-
         }
     }
 }

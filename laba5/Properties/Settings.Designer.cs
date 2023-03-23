@@ -27,9 +27,9 @@ namespace laba5.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ker1xx;Initial Catalog=laba5;Integrated Security=True")]
-        public string laba5ConnectionString {
+        public string notebook {
             get {
-                return ((string)(this["laba5ConnectionString"]));
+                return ((string)(this["notebook"]));
             }
         }
         
@@ -37,9 +37,9 @@ namespace laba5.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8V5P7UB;Initial Catalog=laba5;Integrated Security=True")]
-        public string laba5ConnectionString1 {
+        public string kamputer {
             get {
-                return ((string)(this["laba5ConnectionString1"]));
+                return ((string)(this["kamputer"]));
             }
         }
     }

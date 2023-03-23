@@ -68,3 +68,9 @@ C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Dealers.g.c
 C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Models.g.cs
 C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Dealers.baml
 C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Models.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\authorization info.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Dealers.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Models.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\authorization info.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Dealers.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Models.baml

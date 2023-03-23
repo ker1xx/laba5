@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="laba5ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="laba5ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.laba5.Properties.Settings.GlobalReference.Default.laba5ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="kamputer" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="kamputer (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.laba5.Properties.Settings.GlobalReference.Default.kamputer" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="authorizationTableAdapter" GeneratorDataComponentClassName="authorizationTableAdapter" Name="authorization" UserDataComponentName="authorizationTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.[authorization]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.[authorization]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[authorization] WHERE (([id] = @Original_id) AND ([login] = @Original_login) AND ([password] = @Original_password))</CommandText>
@@ -59,7 +59,7 @@ SELECT id, login, password FROM [authorization] WHERE (id = @id)</CommandText>
               <Mapping SourceColumn="password" DataSetColumn="password" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [authorization]
@@ -70,7 +70,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetID" UserSourceName="FillBy">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetID" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetID" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        [authorization].id,[authorization].login, employee.[job title id], password
@@ -80,7 +80,7 @@ FROM            [authorization] INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.[authorization]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="getlastid" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="getlastid" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="getlastid" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.[authorization]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="getlastid" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="getlastid" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="getlastid" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT top (1) id FROM dbo.[authorization] order by id desc</CommandText>
@@ -88,7 +88,7 @@ FROM            [authorization] INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[authorization] ([id], [login], [password]) VALUES (@id, @login, @password);
@@ -101,7 +101,7 @@ FROM            [authorization] INNER JOIN
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       [authorization]
@@ -121,7 +121,7 @@ WHERE        (id = @Original_id);
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="storageTableAdapter" GeneratorDataComponentClassName="storageTableAdapter" Name="storage" UserDataComponentName="storageTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.storage" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.storage" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[storage] WHERE (([id] = @Original_id) AND ((@IsNull_id_model = 1 AND [id_model] IS NULL) OR ([id_model] = @Original_id_model)) AND ([amount] = @Original_amount) AND ((@IsNull_id_dealer = 1 AND [id_dealer] IS NULL) OR ([id_dealer] = @Original_id_dealer)) AND ([first_price] = @Original_first_price))</CommandText>
@@ -184,7 +184,7 @@ SELECT id, id_model, amount, id_dealer, first_price FROM storage WHERE (id = @id
               <Mapping SourceColumn="first_price" DataSetColumn="first_price" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [storage]
@@ -195,7 +195,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="fillby" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="names" GeneratorSourceName="fillby" GetMethodModifier="Public" GetMethodName="names" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="names" UserSourceName="fillby">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="fillby" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="names" GeneratorSourceName="fillby" GetMethodModifier="Public" GetMethodName="names" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="names" UserSourceName="fillby">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT storage.id,storage.amount,storage.first_price,model.name,dealer.name, id_dealer,id_model
@@ -208,7 +208,7 @@ on dealer.id = storage.id_dealer</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataWithoutFristPrice" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataWithoutFristPrice" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataWithoutFristPrice" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataWithoutFristPrice" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataWithoutFristPrice" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataWithoutFristPrice" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT storage.id,storage.amount,model.name,dealer.name, id_dealer,id_model
@@ -221,7 +221,7 @@ on dealer.id = storage.id_dealer</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[storage] ([id_model], [amount], [id_dealer], [first_price]) VALUES (@id_model, @amount, @id_dealer, @first_price);</CommandText>
@@ -234,7 +234,7 @@ on dealer.id = storage.id_dealer</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       storage
@@ -255,7 +255,7 @@ WHERE        (id = @Original_id)
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="check infoTableAdapter" GeneratorDataComponentClassName="check_infoTableAdapter" Name="check info" UserDataComponentName="check infoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.[check info]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.[check info]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[check info] WHERE (([id] = @Original_id) AND ((@IsNull_employee_id = 1 AND [employee id] IS NULL) OR ([employee id] = @Original_employee_id)) AND ((@IsNull_market_id = 1 AND [market id] IS NULL) OR ([market id] = @Original_market_id)) AND ([total money] = @Original_total_money) AND ([date] = @Original_date))</CommandText>
@@ -318,7 +318,7 @@ SELECT id, [employee id], [market id], [total money], date FROM [check info] WHE
               <Mapping SourceColumn="date" DataSetColumn="date" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [check info]
@@ -329,7 +329,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy3" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="names" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="names" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="names" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT [check info].id,  [total money], date, employee.surname,market.name
@@ -342,7 +342,7 @@ on [check info].[market id] = market.id</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[check info] ([employee id], [market id], [total money], [date]) VALUES (@employee_id, @market_id, @total_money, @date);
@@ -356,7 +356,7 @@ on [check info].[market id] = market.id</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       [check info]
@@ -380,7 +380,7 @@ WHERE        (id = @Original_id) OR
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dealerTableAdapter" GeneratorDataComponentClassName="dealerTableAdapter" Name="dealer" UserDataComponentName="dealerTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.dealer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.dealer" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[dealer] WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([country] = @Original_country))</CommandText>
@@ -429,7 +429,7 @@ SELECT id, name, country FROM dealer WHERE (id = @id)</CommandText>
               <Mapping SourceColumn="country" DataSetColumn="country" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [dealer]
@@ -440,7 +440,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[dealer] ([name], [country]) VALUES (@name, @country);
@@ -452,7 +452,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       dealer
@@ -471,7 +471,7 @@ WHERE        (id = @Original_id);
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employeeTableAdapter" GeneratorDataComponentClassName="employeeTableAdapter" Name="employee" UserDataComponentName="employeeTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[employee] WHERE (([id] = @Original_id) AND ([name] = @Original_name) AND ([surname] = @Original_surname) AND ((@IsNull_lastname = 1 AND [lastname] IS NULL) OR ([lastname] = @Original_lastname)) AND ((@IsNull_job_title_id = 1 AND [job title id] IS NULL) OR ([job title id] = @Original_job_title_id)) AND ([salary] = @Original_salary))</CommandText>
@@ -539,7 +539,7 @@ SELECT id, name, surname, lastname, [job title id], salary FROM employee WHERE (
               <Mapping SourceColumn="salary" DataSetColumn="salary" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [employee]
@@ -550,7 +550,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="names" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="names" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="names" UserSourceName="FillBy">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="names" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="names" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="names" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT employee.id, employee.name, surname, lastname, salary, [job title].name, [job title id]
@@ -559,7 +559,7 @@ from employee inner join [job title] on employee.[job title id] = [job title].id
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[employee] ([name], [surname], [lastname], [job title id], [salary]) VALUES (@name, @surname, @lastname, @job_title_id, @salary);
@@ -574,7 +574,7 @@ from employee inner join [job title] on employee.[job title id] = [job title].id
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       employee
@@ -596,7 +596,7 @@ WHERE        (id = @Original_id);
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="goodsTableAdapter" GeneratorDataComponentClassName="goodsTableAdapter" Name="goods" UserDataComponentName="goodsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.goods" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.goods" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[goods] WHERE (([id] = @Original_id) AND ([price] = @Original_price) AND ([sex] = @Original_sex) AND ((@IsNull_name_id = 1 AND [name id] IS NULL) OR ([name id] = @Original_name_id)) AND ([size] = @Original_size))</CommandText>
@@ -657,7 +657,7 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)</CommandText>
               <Mapping SourceColumn="size" DataSetColumn="size" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [goods]
@@ -668,7 +668,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="names" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="names" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="names" UserSourceName="FillBy">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="names" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="names" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="names" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        goods.id, goods.price, goods.sex, goods.size,model.name
@@ -681,7 +681,7 @@ inner join storage on storage.[id_model] = goods.[id]
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[goods] ([price], [sex], [name id], [size]) VALUES (@price, @sex, @name_id, @size);
@@ -695,7 +695,7 @@ inner join storage on storage.[id_model] = goods.[id]
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       goods
@@ -717,7 +717,7 @@ WHERE        (id = @Original_id) OR
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="job titleTableAdapter" GeneratorDataComponentClassName="job_titleTableAdapter" Name="job title" UserDataComponentName="job titleTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.[job title]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.[job title]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[job title] WHERE (([id] = @Original_id) AND ([name] = @Original_name))</CommandText>
@@ -761,7 +761,7 @@ SELECT id, name FROM [job title] WHERE (id = @id)</CommandText>
               <Mapping SourceColumn="name" DataSetColumn="name" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [order]
@@ -772,7 +772,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[job title] ([name]) VALUES (@name);
@@ -783,7 +783,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       [job title]
@@ -801,7 +801,7 @@ WHERE        (id = @Original_id);
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="marketTableAdapter" GeneratorDataComponentClassName="marketTableAdapter" Name="market" UserDataComponentName="marketTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.market" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.market" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[market] WHERE (([id] = @Original_id) AND ([adress] = @Original_adress) AND ([name] = @Original_name))</CommandText>
@@ -842,7 +842,7 @@ SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working
               <Mapping SourceColumn="time1" DataSetColumn="time1" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [market]
@@ -853,7 +853,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[market] ([adress], [begin working time], [end working time], [name]) VALUES (@adress, @begin_working_time, @end_working_time, @name);
@@ -867,7 +867,7 @@ WHERE        (id = @Original_id) </CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       market
@@ -888,7 +888,7 @@ WHERE        (id = @Original_id);
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="modelTableAdapter" GeneratorDataComponentClassName="modelTableAdapter" Name="model" UserDataComponentName="modelTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.model" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.model" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[model] WHERE (([id] = @Original_id) AND ([name] = @Original_name))</CommandText>
@@ -932,7 +932,7 @@ SELECT id, name FROM model WHERE (id = @id)</CommandText>
               <Mapping SourceColumn="name" DataSetColumn="name" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM model
@@ -943,7 +943,7 @@ WHERE        (id = @Original_id)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[model] ([name]) VALUES (@name);</CommandText>
@@ -953,7 +953,7 @@ WHERE        (id = @Original_id)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE model
@@ -971,7 +971,7 @@ WHERE  (id = @Original_id);
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="orderTableAdapter" GeneratorDataComponentClassName="orderTableAdapter" Name="order" UserDataComponentName="orderTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="laba5.dbo.[order]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="laba5.dbo.[order]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[order] WHERE (([id] = @Original_id) AND ((@IsNull_order_info_id = 1 AND [order info id] IS NULL) OR ([order info id] = @Original_order_info_id)) AND ((@IsNull_goods_in_order_id = 1 AND [goods in order id] IS NULL) OR ([goods in order id] = @Original_goods_in_order_id)) AND ([profit] = @Original_profit))</CommandText>
@@ -1029,7 +1029,7 @@ SELECT id, [order info id], [goods in order id], profit FROM [order] WHERE (id =
               <Mapping SourceColumn="profit" DataSetColumn="profit" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [order]
@@ -1040,7 +1040,7 @@ WHERE        (id = @Original_id)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[order] ([order info id], [goods in order id], [profit]) VALUES (@order_info_id, @goods_in_order_id, @profit);
@@ -1053,7 +1053,7 @@ WHERE        (id = @Original_id)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="laba5ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="kamputer (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       [order]
@@ -1225,8 +1225,8 @@ WHERE        (id = @Original_id) OR
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="time" msdata:ReadOnly="true" msprop:Generator_UserColumnName="time" msprop:Generator_ColumnPropNameInTable="timeColumn" msprop:Generator_ColumnPropNameInRow="time" msprop:Generator_ColumnVarNameInTable="columntime" type="xs:duration" minOccurs="0" />
-              <xs:element name="time1" msdata:ReadOnly="true" msprop:Generator_UserColumnName="time1" msprop:Generator_ColumnPropNameInTable="time1Column" msprop:Generator_ColumnPropNameInRow="time1" msprop:Generator_ColumnVarNameInTable="columntime1" type="xs:duration" minOccurs="0" />
+              <xs:element name="time" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="timeColumn" msprop:Generator_ColumnPropNameInRow="time" msprop:Generator_UserColumnName="time" msprop:Generator_ColumnVarNameInTable="columntime" type="xs:duration" minOccurs="0" />
+              <xs:element name="time1" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="time1Column" msprop:Generator_ColumnPropNameInRow="time1" msprop:Generator_UserColumnName="time1" msprop:Generator_ColumnVarNameInTable="columntime1" type="xs:duration" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1299,15 +1299,15 @@ WHERE        (id = @Original_id) OR
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__authorizatio__id__5165187F" msdata:parent="employee" msdata:child="authorization" msdata:parentkey="id" msdata:childkey="id" msprop:Generator_UserParentTable="employee" msprop:Generator_UserChildTable="authorization" msprop:Generator_RelationVarName="relationFK__authorizatio__id__5165187F" msprop:Generator_ChildPropName="GetauthorizationRows" msprop:Generator_UserRelationName="FK__authorizatio__id__5165187F" msprop:Generator_ParentPropName="employeeRow" />
-      <msdata:Relationship name="FK__storage__id_deal__59063A47" msdata:parent="dealer" msdata:child="storage" msdata:parentkey="id" msdata:childkey="id_dealer" msprop:Generator_UserParentTable="dealer" msprop:Generator_UserChildTable="storage" msprop:Generator_RelationVarName="relationFK__storage__id_deal__59063A47" msprop:Generator_ChildPropName="GetstorageRows" msprop:Generator_UserRelationName="FK__storage__id_deal__59063A47" msprop:Generator_ParentPropName="dealerRow" />
-      <msdata:Relationship name="FK__storage__id_mode__59FA5E80" msdata:parent="model" msdata:child="storage" msdata:parentkey="id" msdata:childkey="id_model" msprop:Generator_UserParentTable="model" msprop:Generator_UserChildTable="storage" msprop:Generator_RelationVarName="relationFK__storage__id_mode__59FA5E80" msprop:Generator_ChildPropName="GetstorageRows" msprop:Generator_UserRelationName="FK__storage__id_mode__59FA5E80" msprop:Generator_ParentPropName="modelRow" />
-      <msdata:Relationship name="FK__check_x0020_inf__emplo__52593CB8" msdata:parent="employee" msdata:child="check_x0020_info" msdata:parentkey="id" msdata:childkey="employee_x0020_id" msprop:Generator_UserParentTable="employee" msprop:Generator_UserChildTable="check info" msprop:Generator_RelationVarName="relationFK__check_inf__emplo__52593CB8" msprop:Generator_ChildPropName="Getcheck_infoRows" msprop:Generator_UserRelationName="FK__check inf__emplo__52593CB8" msprop:Generator_ParentPropName="employeeRow" />
-      <msdata:Relationship name="FK__check_x0020_inf__marke__4CA06362" msdata:parent="market" msdata:child="check_x0020_info" msdata:parentkey="id" msdata:childkey="market_x0020_id" msprop:Generator_UserParentTable="market" msprop:Generator_UserChildTable="check info" msprop:Generator_RelationVarName="relationFK__check_inf__marke__4CA06362" msprop:Generator_ChildPropName="Getcheck_infoRows" msprop:Generator_UserRelationName="FK__check inf__marke__4CA06362" msprop:Generator_ParentPropName="marketRow" />
-      <msdata:Relationship name="FK__employee__job_x0020_ti__5441852A" msdata:parent="job_x0020_title" msdata:child="employee" msdata:parentkey="id" msdata:childkey="job_x0020_title_x0020_id" msprop:Generator_UserParentTable="job title" msprop:Generator_UserChildTable="employee" msprop:Generator_RelationVarName="relationFK__employee__job_ti__5441852A" msprop:Generator_ChildPropName="GetemployeeRows" msprop:Generator_UserRelationName="FK__employee__job ti__5441852A" msprop:Generator_ParentPropName="job_titleRow" />
-      <msdata:Relationship name="FK__goods__name_x0020_id__5535A963" msdata:parent="storage" msdata:child="goods" msdata:parentkey="id" msdata:childkey="name_x0020_id" msprop:Generator_UserParentTable="storage" msprop:Generator_UserChildTable="goods" msprop:Generator_RelationVarName="relationFK__goods__name_id__5535A963" msprop:Generator_ChildPropName="GetgoodsRows" msprop:Generator_ParentPropName="storageRow" msprop:Generator_UserRelationName="FK__goods__name id__5535A963" />
-      <msdata:Relationship name="FK__order__goods_x0020_in_x0020___571DF1D5" msdata:parent="goods" msdata:child="order" msdata:parentkey="id" msdata:childkey="goods_x0020_in_x0020_order_x0020_id" msprop:Generator_UserParentTable="goods" msprop:Generator_UserChildTable="order" msprop:Generator_RelationVarName="relationFK__order__goods_in___571DF1D5" msprop:Generator_ChildPropName="GetorderRows" msprop:Generator_ParentPropName="goodsRow" msprop:Generator_UserRelationName="FK__order__goods in __571DF1D5" />
-      <msdata:Relationship name="FK__order__order_x0020_inf__5812160E" msdata:parent="check_x0020_info" msdata:child="order" msdata:parentkey="id" msdata:childkey="order_x0020_info_x0020_id" msprop:Generator_UserParentTable="check info" msprop:Generator_UserChildTable="order" msprop:Generator_RelationVarName="relationFK__order__order_inf__5812160E" msprop:Generator_ChildPropName="GetorderRows" msprop:Generator_ParentPropName="check_infoRow" msprop:Generator_UserRelationName="FK__order__order inf__5812160E" />
+      <msdata:Relationship name="FK__authorizatio__id__5165187F" msdata:parent="employee" msdata:child="authorization" msdata:parentkey="id" msdata:childkey="id" msprop:Generator_UserParentTable="employee" msprop:Generator_UserChildTable="authorization" msprop:Generator_RelationVarName="relationFK__authorizatio__id__5165187F" msprop:Generator_ChildPropName="GetauthorizationRows" msprop:Generator_ParentPropName="employeeRow" msprop:Generator_UserRelationName="FK__authorizatio__id__5165187F" />
+      <msdata:Relationship name="FK__storage__id_deal__59063A47" msdata:parent="dealer" msdata:child="storage" msdata:parentkey="id" msdata:childkey="id_dealer" msprop:Generator_UserParentTable="dealer" msprop:Generator_UserChildTable="storage" msprop:Generator_RelationVarName="relationFK__storage__id_deal__59063A47" msprop:Generator_ChildPropName="GetstorageRows" msprop:Generator_ParentPropName="dealerRow" msprop:Generator_UserRelationName="FK__storage__id_deal__59063A47" />
+      <msdata:Relationship name="FK__storage__id_mode__59FA5E80" msdata:parent="model" msdata:child="storage" msdata:parentkey="id" msdata:childkey="id_model" msprop:Generator_UserParentTable="model" msprop:Generator_UserChildTable="storage" msprop:Generator_RelationVarName="relationFK__storage__id_mode__59FA5E80" msprop:Generator_ChildPropName="GetstorageRows" msprop:Generator_ParentPropName="modelRow" msprop:Generator_UserRelationName="FK__storage__id_mode__59FA5E80" />
+      <msdata:Relationship name="FK__check_x0020_inf__emplo__52593CB8" msdata:parent="employee" msdata:child="check_x0020_info" msdata:parentkey="id" msdata:childkey="employee_x0020_id" msprop:Generator_UserParentTable="employee" msprop:Generator_UserChildTable="check info" msprop:Generator_RelationVarName="relationFK__check_inf__emplo__52593CB8" msprop:Generator_ChildPropName="Getcheck_infoRows" msprop:Generator_ParentPropName="employeeRow" msprop:Generator_UserRelationName="FK__check inf__emplo__52593CB8" />
+      <msdata:Relationship name="FK__check_x0020_inf__marke__4CA06362" msdata:parent="market" msdata:child="check_x0020_info" msdata:parentkey="id" msdata:childkey="market_x0020_id" msprop:Generator_UserParentTable="market" msprop:Generator_UserChildTable="check info" msprop:Generator_RelationVarName="relationFK__check_inf__marke__4CA06362" msprop:Generator_ChildPropName="Getcheck_infoRows" msprop:Generator_ParentPropName="marketRow" msprop:Generator_UserRelationName="FK__check inf__marke__4CA06362" />
+      <msdata:Relationship name="FK__employee__job_x0020_ti__5441852A" msdata:parent="job_x0020_title" msdata:child="employee" msdata:parentkey="id" msdata:childkey="job_x0020_title_x0020_id" msprop:Generator_UserParentTable="job title" msprop:Generator_UserChildTable="employee" msprop:Generator_RelationVarName="relationFK__employee__job_ti__5441852A" msprop:Generator_ChildPropName="GetemployeeRows" msprop:Generator_ParentPropName="job_titleRow" msprop:Generator_UserRelationName="FK__employee__job ti__5441852A" />
+      <msdata:Relationship name="FK__goods__name_x0020_id__5535A963" msdata:parent="storage" msdata:child="goods" msdata:parentkey="id" msdata:childkey="name_x0020_id" msprop:Generator_UserParentTable="storage" msprop:Generator_UserChildTable="goods" msprop:Generator_RelationVarName="relationFK__goods__name_id__5535A963" msprop:Generator_ChildPropName="GetgoodsRows" msprop:Generator_UserRelationName="FK__goods__name id__5535A963" msprop:Generator_ParentPropName="storageRow" />
+      <msdata:Relationship name="FK__order__goods_x0020_in_x0020___571DF1D5" msdata:parent="goods" msdata:child="order" msdata:parentkey="id" msdata:childkey="goods_x0020_in_x0020_order_x0020_id" msprop:Generator_UserParentTable="goods" msprop:Generator_UserChildTable="order" msprop:Generator_RelationVarName="relationFK__order__goods_in___571DF1D5" msprop:Generator_ChildPropName="GetorderRows" msprop:Generator_UserRelationName="FK__order__goods in __571DF1D5" msprop:Generator_ParentPropName="goodsRow" />
+      <msdata:Relationship name="FK__order__order_x0020_inf__5812160E" msdata:parent="check_x0020_info" msdata:child="order" msdata:parentkey="id" msdata:childkey="order_x0020_info_x0020_id" msprop:Generator_UserParentTable="check info" msprop:Generator_UserChildTable="order" msprop:Generator_RelationVarName="relationFK__order__order_inf__5812160E" msprop:Generator_ChildPropName="GetorderRows" msprop:Generator_UserRelationName="FK__order__order inf__5812160E" msprop:Generator_ParentPropName="check_infoRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
