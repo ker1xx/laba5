@@ -25,21 +25,20 @@ namespace laba5
     {
         employeeTableAdapter emp = new employeeTableAdapter();
         job_titleTableAdapter job = new job_titleTableAdapter();
-        AdminPanel AdminPanel;
         int AmountOfEmployees = 0;
         int FullSalary = 0;
-        public employees(AdminPanel adminPanel)
+        AdminPanel AdminPanel;
+        public employees(AdminPanel AdminPanel)
         {
             InitializeComponent();
+            this.AdminPanel = AdminPanel;
             Display.ItemsSource = emp.names();
             Display.IsReadOnly = true;
-            AdminPanel = adminPanel;
             AdditionalInfo();
-            Info1.Text = "Общее количество сотрудников: " + AmountOfEmployees.ToString();
-            Info2.Text = "Общая сумма зарплаты за месяц: " + FullSalary.ToString();
             JobTitleInput.ItemsSource = job.GetData();
             JobTitleInput.DisplayMemberPath = "name";
             JobTitleInput.SelectedValuePath = "id";
+
         }
 
         private void Display_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -55,10 +54,7 @@ namespace laba5
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             if (NameInput.Text == string.Empty || SurnameInput.Text == string.Empty || SalaryInput.Text == string.Empty || JobTitleInput.SelectedIndex == -1)
-            {
-
                 ErrorMessage.Text = "Вы заполнили не все поля";
-            }
             else
             {
                 if (LastNameInput.Text == string.Empty)
@@ -67,8 +63,9 @@ namespace laba5
                     {
                         emp.InsertQuery((string)NameInput.Text, (string)SurnameInput.Text, null, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text));
                         updated();
+                        AdditionalInfo();
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         ErrorMessage.Text = "Вы ввели неверные значения";
                     }
@@ -79,8 +76,9 @@ namespace laba5
                     {
                         emp.InsertQuery((string)NameInput.Text, (string)SurnameInput.Text, (string)LastNameInput.Text, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text));
                         updated();
+                        AdditionalInfo();
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         ErrorMessage.Text = "Вы ввели неверные значения";
                     }
@@ -103,8 +101,9 @@ namespace laba5
                     {
                         emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, null, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
                         updated();
+                        AdditionalInfo();
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         ErrorMessage.Text = "Вы ввели неверные значения";
                     }
@@ -115,8 +114,9 @@ namespace laba5
                     {
                         emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, (string)LastNameInput.Text, (int)JobTitleInput.SelectedValue, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
                         updated();
+                        AdditionalInfo();
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         ErrorMessage.Text = "Вы ввели неверные значения";
                     }
@@ -132,6 +132,7 @@ namespace laba5
                 var item = Display.SelectedItem as DataRowView;
                 emp.DeleteQuery((int)item[0]);
                 updated();
+                AdditionalInfo();
             }
             else
                 ErrorMessage.Text = "Вы не выбрали элемент!";
@@ -165,6 +166,11 @@ namespace laba5
         {
             Display.ItemsSource = emp.names();
             ErrorMessage.Text = string.Empty;
+        }
+
+        private void AutharizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPanel.Frame.Content = new authorization_info();
         }
     }
 }

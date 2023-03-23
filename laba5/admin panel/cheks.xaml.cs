@@ -20,12 +20,10 @@ namespace laba5
     /// </summary>
     public partial class cheks : Page
     {
-        AdminPanel adminPanel;
 
-        public cheks(AdminPanel adminPanel)
+        public cheks()
         {
             InitializeComponent();
-            this.adminPanel = adminPanel;
         }
     }
 }

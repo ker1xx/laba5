@@ -30,3 +30,41 @@ C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\HistoryOfOrders.ba
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\CashierPanel\Order.baml
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\MainWindow.g.cs
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\MainWindow.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\bin\Debug\laba5.exe.config
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\bin\Debug\laba5.exe
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\bin\Debug\laba5.pdb
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.AssemblyReference.cache
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.SuggestedBindingRedirects.cache
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\AdminPanel.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\CashierPanel.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\cheks.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\employees.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\HistoryOfOrders.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\MainWindow.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\markets.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\storage.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\Order.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\App.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5_MarkupCompile.cache
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5_MarkupCompile.lref
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\AdminPanel.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\CashierPanel.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\cheks.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\employees.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\HistoryOfOrders.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\MainWindow.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\markets.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\storage.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\Order.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.g.resources
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.Properties.Resources.resources
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.GenerateResource.cache
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.CoreCompileInputs.cache
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.exe
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\laba5.pdb
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\authorization info.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\authorization info.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Dealers.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Models.g.cs
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Dealers.baml
+C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Models.baml

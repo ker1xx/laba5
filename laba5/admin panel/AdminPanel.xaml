@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba5"
         mc:Ignorable="d"
-        Title="AdminPanel" Height="450" Width="800">
+        Title="AdminPanel" Height="675" Width="1200">
     <Window.Resources>
         <Style TargetType="Button" x:Key="TopButtons">
             <Setter Property="Grid.Row" Value="0"/>

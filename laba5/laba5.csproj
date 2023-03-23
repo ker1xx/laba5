@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin panel\authorization info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CashierPanel\CashierPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -88,6 +92,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin panel\Dealers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,6 +106,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="admin panel\authorization info.xaml.cs">
+      <DependentUpon>authorization info.xaml</DependentUpon>
     </Compile>
     <Compile Include="CashierPanel\CashierPanel.xaml.cs">
       <DependentUpon>CashierPanel.xaml</DependentUpon>
@@ -112,6 +123,9 @@
     </Compile>
     <Compile Include="CashierPanel\HistoryOfOrders.xaml.cs">
       <DependentUpon>HistoryOfOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin panel\Dealers.xaml.cs">
+      <DependentUpon>Dealers.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -129,10 +143,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="admin panel\Models.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CashierPanel\Order.xaml.cs">
       <DependentUpon>Order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin panel\Models.xaml.cs">
+      <DependentUpon>Models.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

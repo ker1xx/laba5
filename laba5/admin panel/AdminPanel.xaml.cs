@@ -20,9 +20,7 @@ namespace laba5
     /// </summary>
     public partial class AdminPanel : Window
     {
-        employeeTableAdapter emp = new employeeTableAdapter();
-        marketTableAdapter market = new marketTableAdapter();
-        storageTableAdapter storageData = new storageTableAdapter();
+
         public AdminPanel()
         {
             InitializeComponent();
@@ -32,7 +30,7 @@ namespace laba5
 
         private void CheksButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Content = new cheks(this);
+            Frame.Content = new cheks();
 
         }
 
@@ -44,7 +42,7 @@ namespace laba5
 
         private void MarketsButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Content = new markets(this);
+            Frame.Content = new markets();
         }
 
         private void StorageButton_Click(object sender, RoutedEventArgs e)

@@ -34,10 +34,15 @@
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition/>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.3*"/>
@@ -51,20 +56,20 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="Display" Margin="5" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="9" Grid.Column="1" SelectionChanged="Display_SelectionChanged"/>
+        <DataGrid x:Name="Display" Margin="5" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="13" Grid.Column="1" SelectionChanged="Display_SelectionChanged"/>
         <Button Style="{StaticResource SideButton}" x:Name="CreateButton" Grid.Row="2" Content="Добавить" Click="CreateButton_Click"/>
         <Button Style="{StaticResource SideButton}" x:Name="UpdateButton" Grid.Row="3" Content="Изменить" Click="UpdateButton_Click"/>
         <Button Style="{StaticResource SideButton}" x:Name="DeleteButton" Grid.Row="4" Content="Удалить" Click="DeleteButton_Click"/>
         <TextBlock Style="{StaticResource SideText}" x:Name="Info1" Grid.Row="6" Grid.RowSpan="2"/>
         <TextBlock Style="{StaticResource SideText}" x:Name="Info2" Grid.Row="8" Grid.RowSpan="2"/>
-        <TextBox x:Name="NameInput" Grid.Row="11" Grid.Column="0" VerticalAlignment="Center" Margin="2"/>
-        <TextBox x:Name="AdressInput" Grid.Row="11" Grid.Column="2" VerticalAlignment="Center" Margin="5" FontSize="14"/>
-        <TextBox x:Name="BeginInput" Grid.Row="12" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="14"/>
-        <TextBox x:Name="EndInput" Grid.Row="12" Grid.Column="3" VerticalAlignment="Center" Margin="5" FontSize="14"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="NameText" Text="Название:" Grid.Row="10" Grid.Column="0"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="SurnameText" Text="Адрес" Grid.Row="10" Grid.Column="2"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="LastnameText" Text="Начало работы" Grid.Row="11" Grid.Column="1"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="SalaryText" Text="Конец работы" Grid.Row="11" Grid.Column="3"/>
-        <TextBlock x:Name="ErrorMessage" Grid.ColumnSpan="5" Grid.Row="13" TextAlignment="Center"/>
+        <TextBox x:Name="NameInput" Grid.Row="15" Grid.Column="0" VerticalAlignment="Center" Margin="2"/>
+        <TextBox x:Name="AdressInput" Grid.Row="15" Grid.Column="2" VerticalAlignment="Center" Margin="5" FontSize="14"/>
+        <TextBox x:Name="BeginInput" Grid.Row="16" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="14"/>
+        <TextBox x:Name="EndInput" Grid.Row="16" Grid.Column="3" VerticalAlignment="Center" Margin="5" FontSize="14"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="NameText" Text="Название:" Grid.Row="14" Grid.Column="0"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="SurnameText" Text="Адрес" Grid.Row="14" Grid.Column="2"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="LastnameText" Text="Начало работы" Grid.Row="15" Grid.Column="1"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="SalaryText" Text="Конец работы" Grid.Row="15" Grid.Column="3"/>
+        <TextBlock x:Name="ErrorMessage" Grid.ColumnSpan="5" Grid.Row="17" TextAlignment="Center"/>
     </Grid>
 </Page>

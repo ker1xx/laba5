@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\klink\Source\Repos\ker1xx\laba5\laba5\App.xaml
-9-227881944
+12-1158185984
 
-16548682293
+19-810173775
 14-2011955616
-admin panel\AdminPanel.xaml;CashierPanel\CashierPanel.xaml;admin panel\cheks.xaml;admin panel\employees.xaml;CashierPanel\HistoryOfOrders.xaml;MainWindow.xaml;admin panel\markets.xaml;admin panel\storage.xaml;CashierPanel\Order.xaml;
+admin panel\AdminPanel.xaml;admin panel\authorization info.xaml;CashierPanel\CashierPanel.xaml;admin panel\cheks.xaml;admin panel\employees.xaml;CashierPanel\HistoryOfOrders.xaml;admin panel\Dealers.xaml;MainWindow.xaml;admin panel\markets.xaml;admin panel\storage.xaml;CashierPanel\Order.xaml;admin panel\Models.xaml;
 
 True
 

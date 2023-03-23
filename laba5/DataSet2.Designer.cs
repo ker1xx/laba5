@@ -5225,45 +5225,49 @@ namespace laba5.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, login, password FROM dbo.[authorization]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) ";
+            this._commandCollection[1].CommandText = "DELETE FROM [authorization]\r\nWHERE        (id = @Original_id) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        [authorization].id,[authorization].login,employee.[job title id], p" +
-                "assword\r\nFROM            [authorization] INNER JOIN\r\n                         em" +
-                "ployee ON [authorization].id = employee.id";
+            this._commandCollection[2].CommandText = "SELECT        [authorization].id,[authorization].login, employee.[job title id], " +
+                "password\r\nFROM            [authorization] INNER JOIN\r\n                         e" +
+                "mployee ON [authorization].id = employee.id";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO [dbo].[authorization] ([id], [login], [password]) VALUES (@id, @login" +
-                ", @password);\n";
+            this._commandCollection[3].CommandText = "SELECT top (1) id FROM dbo.[authorization] order by id desc";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE       [authorization]\r\nSET                id = @id, login = @login, passwo" +
-                "rd = @password\r\nWHERE        (id = @Original_id); \r\n";
+            this._commandCollection[4].CommandText = "INSERT INTO [dbo].[authorization] ([id], [login], [password]) VALUES (@id, @login" +
+                ", @password);\r\n";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE       [authorization]\r\nSET                id = @id, login = @login, passwo" +
+                "rd = @password\r\nWHERE        (id = @Original_id); \r\n";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@login", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5309,6 +5313,30 @@ namespace laba5.DataSet2TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual DataSet2.authorizationDataTable GetID() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            DataSet2.authorizationDataTable dataTable = new DataSet2.authorizationDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(DataSet2.authorizationDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet2.authorizationDataTable getlastid() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             DataSet2.authorizationDataTable dataTable = new DataSet2.authorizationDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5495,7 +5523,7 @@ namespace laba5.DataSet2TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(int id, string login, string password) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(id));
             if ((login == null)) {
                 throw new global::System.ArgumentNullException("login");
@@ -5531,7 +5559,7 @@ namespace laba5.DataSet2TableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(int id, string login, string password, int Original_id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((int)(id));
             if ((login == null)) {
                 throw new global::System.ArgumentNullException("login");
@@ -5735,7 +5763,7 @@ SELECT id, id_model, amount, id_dealer, first_price FROM storage WHERE (id = @id
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5748,14 +5776,14 @@ SELECT id, id_model, amount, id_dealer, first_price FROM storage WHERE (id = @id
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) ";
+            this._commandCollection[1].CommandText = "DELETE FROM [storage]\r\nWHERE        (id = @Original_id) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT storage.id,storage.amount,storage.first_price,model.name,dealer.name\r\nfrom" +
-                " storage\r\ninner join model\r\non model.id = storage.id_model\r\ninner join dealer\r\no" +
-                "n dealer.id = storage.id_dealer";
+            this._commandCollection[2].CommandText = "SELECT storage.id,storage.amount,storage.first_price,model.name,dealer.name, id_d" +
+                "ealer,id_model\r\nfrom storage\r\ninner join model\r\non model.id = storage.id_model\r\n" +
+                "inner join dealer\r\non dealer.id = storage.id_dealer";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -5774,21 +5802,15 @@ SELECT id, id_model, amount, id_dealer, first_price FROM storage WHERE (id = @id
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_price", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "first_price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = @"UPDATE       storage
-SET                id_model = @id_model, amount = @amount, id_dealer = @id_dealer, first_price = @first_price
-WHERE        (id = @Original_id) AND (@IsNull_id_model = 1) AND (@IsNull_id_dealer = 1) OR
-                         (id = @Original_id) AND (@IsNull_id_dealer = 1) OR
-                         (id = @Original_id) AND (@IsNull_id_model = 1) OR
-                         (id = @Original_id); 
-";
+            this._commandCollection[5].CommandText = "UPDATE       storage\r\nSET                id_model = @id_model, amount = @amount, " +
+                "id_dealer = @id_dealer, first_price = @first_price\r\nWHERE        (id = @Original" +
+                "_id)\r\n";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_model", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@amount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_dealer", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_dealer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@first_price", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "first_price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_model", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_model", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_dealer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_dealer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6095,7 +6117,7 @@ WHERE        (id = @Original_id) AND (@IsNull_id_model = 1) AND (@IsNull_id_deal
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(global::System.Nullable<int> id_model, int amount, global::System.Nullable<int> id_dealer, decimal first_price, int Original_id, global::System.Nullable<int> IsNull_id_model, global::System.Nullable<int> IsNull_id_dealer) {
+        public virtual int UpdateQuery(global::System.Nullable<int> id_model, int amount, global::System.Nullable<int> id_dealer, decimal first_price, int Original_id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((id_model.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(id_model.Value));
@@ -6112,18 +6134,6 @@ WHERE        (id = @Original_id) AND (@IsNull_id_model = 1) AND (@IsNull_id_deal
             }
             command.Parameters[3].Value = ((decimal)(first_price));
             command.Parameters[4].Value = ((int)(Original_id));
-            if ((IsNull_id_model.HasValue == true)) {
-                command.Parameters[5].Value = ((int)(IsNull_id_model.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((IsNull_id_dealer.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(IsNull_id_dealer.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6314,7 +6324,7 @@ SELECT id, [employee id], [market id], [total money], date FROM [check info] WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6327,7 +6337,7 @@ SELECT id, [employee id], [market id], [total money], date FROM [check info] WHE
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) ";
+            this._commandCollection[1].CommandText = "DELETE FROM [check info]\r\nWHERE        (id = @Original_id) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -6339,7 +6349,7 @@ SELECT id, [employee id], [market id], [total money], date FROM [check info] WHE
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "INSERT INTO [dbo].[check info] ([employee id], [market id], [total money], [date]" +
-                ") VALUES (@employee_id, @market_id, @total_money, @date);\n";
+                ") VALUES (@employee_id, @market_id, @total_money, @date);\r\n";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@employee_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "employee id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@market_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "market id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6835,7 +6845,7 @@ WHERE        (id = @Original_id) OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6848,12 +6858,12 @@ WHERE        (id = @Original_id) OR
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) ";
+            this._commandCollection[1].CommandText = "DELETE FROM [dealer]\r\nWHERE        (id = @Original_id) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[dealer] ([name], [country]) VALUES (@name, @country);\n";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[dealer] ([name], [country]) VALUES (@name, @country);\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@country", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "country", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7315,7 +7325,7 @@ SELECT id, name, surname, lastname, [job title id], salary FROM employee WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7328,7 +7338,7 @@ SELECT id, name, surname, lastname, [job title id], salary FROM employee WHERE (
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) ";
+            this._commandCollection[1].CommandText = "DELETE FROM [employee]\r\nWHERE        (id = @Original_id) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -7340,7 +7350,7 @@ SELECT id, name, surname, lastname, [job title id], salary FROM employee WHERE (
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "INSERT INTO [dbo].[employee] ([name], [surname], [lastname], [job title id], [sal" +
-                "ary]) VALUES (@name, @surname, @lastname, @job_title_id, @salary);\n";
+                "ary]) VALUES (@name, @surname, @lastname, @job_title_id, @salary);\r\n";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@surname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7913,7 +7923,7 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7926,19 +7936,19 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) ";
+            this._commandCollection[1].CommandText = "DELETE FROM [goods]\r\nWHERE        (id = @Original_id) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        goods.id, goods.price, goods.sex, goods.size,\r\nFROM            stor" +
-                "age INNER JOIN\r\n                         model ON storage.[model_id] = model.nam" +
-                "e\r\nfrom goods inner join storage on storage.[model_id] = goods.[name id]";
+            this._commandCollection[2].CommandText = "SELECT        goods.id, goods.price, goods.sex, goods.size,model.name\r\nFROM      " +
+                "      goods\r\ninner join storage on storage.[id_model] = goods.[id]\r\n INNER JOIN\r" +
+                "\n                         model ON storage.[id_model] = model.id\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "INSERT INTO [dbo].[goods] ([price], [sex], [name id], [size]) VALUES (@price, @se" +
-                "x, @name_id, @size);\n";
+                "x, @name_id, @size);\r\n";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sex", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "sex", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8420,7 +8430,7 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8438,7 +8448,7 @@ SELECT id, price, sex, [name id], size FROM goods WHERE (id = @id)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[job title] ([name]) VALUES (@name);\n";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[job title] ([name]) VALUES (@name);\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -8837,7 +8847,7 @@ SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8851,13 +8861,13 @@ SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) ";
+            this._commandCollection[1].CommandText = "DELETE FROM [market]\r\nWHERE        (id = @Original_id) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "INSERT INTO [dbo].[market] ([adress], [begin working time], [end working time], [" +
-                "name]) VALUES (@adress, @begin_working_time, @end_working_time, @name);\n";
+                "name]) VALUES (@adress, @begin_working_time, @end_working_time, @name);\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@adress", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "adress", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@begin_working_time", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "begin working time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9270,7 +9280,7 @@ SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9293,7 +9303,7 @@ SELECT id, adress, CAST([begin working time] AS time) AS time, CAST([end working
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE model\nSET          name = @name\nWHERE  (id = @Original_id); \n";
+            this._commandCollection[3].CommandText = "UPDATE model\r\nSET          name = @name\r\nWHERE  (id = @Original_id); \r\n";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -9700,7 +9710,7 @@ SELECT id, [order info id], [goods in order id], profit FROM [order] WHERE (id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString1;
+            this._connection.ConnectionString = global::laba5.Properties.Settings.Default.laba5ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9713,15 +9723,13 @@ SELECT id, [order info id], [goods in order id], profit FROM [order] WHERE (id =
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id) OR\r\n                       " +
-                "  (id = @Original_id) OR\r\n                         (id = @Original_id) OR\r\n     " +
-                "                    (id = @Original_id)";
+            this._commandCollection[1].CommandText = "DELETE FROM [order]\r\nWHERE        (id = @Original_id)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "INSERT INTO [dbo].[order] ([order info id], [goods in order id], [profit]) VALUES" +
-                " (@order_info_id, @goods_in_order_id, @profit);\n";
+                " (@order_info_id, @goods_in_order_id, @profit);\r\n";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_info_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "order info id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@goods_in_order_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "goods in order id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

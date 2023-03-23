@@ -59,7 +59,7 @@ namespace laba5
                     else if (role == 2)
                     {
                         CashierPanel cashierPanel = new CashierPanel();
-                        this.Visibility = Visibility.Hidden;
+                        this.Visibility = Visibility.Collapsed;
                         cashierPanel.ShowDialog();
                     }
                     LoginInput.Text = String.Empty;
