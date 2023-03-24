@@ -1,4 +1,4 @@
-﻿using laba5.DataSet2TableAdapters;
+﻿using laba5.mamaTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -39,6 +39,7 @@ namespace laba5
                         {
                             IsLogined = true;
                             role = (int)data[3];
+                            break;
                         }
                     }
                 }

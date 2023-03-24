@@ -1,4 +1,4 @@
-﻿using laba5.DataSet2TableAdapters;
+﻿using laba5.mamaTableAdapters;
 using System.Data;
 using System;
 using System.Windows.Controls;

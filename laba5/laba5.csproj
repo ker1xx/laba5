@@ -113,13 +113,8 @@
     <Compile Include="CashierPanel\CashierPanel.xaml.cs">
       <DependentUpon>CashierPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataSet2.cs">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet2.xsd</DependentUpon>
+    <Compile Include="mama.cs">
+      <DependentUpon>mama.xsd</DependentUpon>
     </Compile>
     <Compile Include="CashierPanel\HistoryOfOrders.xaml.cs">
       <DependentUpon>HistoryOfOrders.xaml</DependentUpon>
@@ -127,6 +122,12 @@
     <Compile Include="admin panel\Dealers.xaml.cs">
       <DependentUpon>Dealers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="mama.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mama.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="glubglob\globalconstants.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -172,16 +173,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DataSet2.xsc">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
+    <None Include="mama.xsc">
+      <DependentUpon>mama.xsd</DependentUpon>
     </None>
-    <None Include="DataSet2.xsd">
+    <None Include="mama.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <LastGenOutput>mama.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSet2.xss">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
+    <None Include="mama.xss">
+      <DependentUpon>mama.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

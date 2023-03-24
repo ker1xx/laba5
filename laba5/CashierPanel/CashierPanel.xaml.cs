@@ -23,5 +23,10 @@ namespace laba5
         {
             InitializeComponent();
         }
+
+        private void NewOrder_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new Order();
+        }
     }
 }

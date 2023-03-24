@@ -1,4 +1,5 @@
-﻿using System;
+﻿using laba5.glubglob;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,10 @@ namespace laba5
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            laba5.Properties.Settings.Default.notebook = globalconstants.connection;
+            laba5.Properties.Settings.Default.Save();
+        }
     }
 }
