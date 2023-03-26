@@ -110,6 +110,7 @@
     <Compile Include="admin panel\authorization info.xaml.cs">
       <DependentUpon>authorization info.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CashierPanel\CartItems.cs" />
     <Compile Include="CashierPanel\CashierPanel.xaml.cs">
       <DependentUpon>CashierPanel.xaml</DependentUpon>
     </Compile>

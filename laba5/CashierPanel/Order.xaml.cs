@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,6 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace laba5
+
 {
     /// <summary>
     /// Логика взаимодействия для Order.xaml
@@ -25,7 +27,8 @@ namespace laba5
     public partial class Order : Page
     {
         storageTableAdapter storage = new storageTableAdapter();
-        List<storageTableAdapter> cart = new List<storageTableAdapter>();
+        List<CartItems> cart = new List<CartItems>();
+        List<storageTableAdapter> allitems = new List<storageTableAdapter>();
         public Order()
         {
             InitializeComponent();
@@ -43,49 +46,38 @@ namespace laba5
             }
         }
 
-        private void ListedItems_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
-        {
-            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
-            e.Column.Header = propertyDescriptor.DisplayName;
-            if (propertyDescriptor.DisplayName == "id_dealer" || propertyDescriptor.DisplayName == "id_model" || propertyDescriptor.DisplayName == "id")
-            {
-                e.Cancel = true;
-            }
-        }
-
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            if (ListedItems.Items.Count != 0 && Display.SelectedItem != null)
+            if (cart.Count != 0 && Display.SelectedItem != null)
             {
-                var item = Display.SelectedItem as DataGridView;
-                foreach (var item1 in ListedItems.Items)
+                var item = Display.SelectedItem as DataRowView;
+                foreach (var item1 in cart)
                 {
-                    if ((item1 as DataRowView)[0] == item.Rows[0])
+                    if (item1.Name == (string)item[0])
                     {
-                        (item1 as DataRowView)[2] = (int)(item1 as DataRowView)[2] + 1;
+                        item1.Amount ++;
                         break;
                     }
                     else
                     {
-                        ListedItems.Items.Add(Display.SelectedItem as DataGridView);
-                        (item1 as DataRowView)[2] = 1;
-
+                        CartItems newitem = new CartItems("a", "a", 3, 3);
+                        cart.Add(newitem);
+                        ListedItems.ItemsSource = cart;
                     }
                 }
 
             }
             else
             {
-                cart.Add((storageTableAdapter)Display.SelectedItem);
+                cart.Add(new CartItems("a", "a", 3, 3));
                 ListedItems.ItemsSource = cart;
-
             }
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             if (ListedItems.Items.Count != 0 && Display.SelectedItem != null)
-            {
+            {/*
                 var item = Display.SelectedItem as DataGridView;
                 foreach (var item1 in ListedItems.Items)
                 {
@@ -102,7 +94,7 @@ namespace laba5
                         (item1 as DataRowView)[2] = 1;
 
                     }
-                }
+                }*/
 
             }
         }
@@ -111,5 +103,8 @@ namespace laba5
         {
 
         }
+
     }
 }
+
+
