@@ -27,7 +27,7 @@ namespace laba5.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <SerializableConnectionString xmlns:xsd=""http://www.w3.org/2001/XMLSchema"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">
-  <ConnectionString>Data Source=ker1xx;Initial Catalog=laba5;Integrated Security=True</ConnectionString>
+  <ConnectionString>Data Source=desktop-8v5p7ub;Initial Catalog=laba5;Integrated Security=True</ConnectionString>
   <ProviderName>System.Data.SqlClient</ProviderName>
 </SerializableConnectionString>")]
         public string notebook {

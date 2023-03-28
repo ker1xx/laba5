@@ -1,0 +1,56 @@
+﻿<Page x:Class="laba5.ConfirmOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:laba5"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ConfirmOrder" Background="White">
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="Text">
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="15,0,15,0"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MaxHeight" Value="90"/>
+            <Setter Property="MinWidth" Value="60"/>
+            <Setter Property="MaxWidth" Value="180"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="InputBox">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="20,0,20,0"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Grid.Column" Value="0"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource Text}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource InputBox}"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.7*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="NameOfCashierText" Grid.Row="0" Text="Кассир: "/>
+        <ComboBox x:Name="NameOfCashier_Input" VerticalAlignment="Bottom" Margin="40,0,40,15" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock x:Name="FullPriceText" Grid.Row="1" Text="Сумма к оплате: " />
+        <TextBox x:Name="FullPrice_Input" Grid.Row="1" IsReadOnly="True"/>
+        <TextBlock x:Name="GivenText" Grid.Row="2" Text="Внесенная сумма: "/>
+        <TextBox x:Name="Given_Input"  Grid.Row="2"/>
+        <TextBlock x:Name="NameOfMarket" Grid.Row="3" Text="Магазин: "/>
+        <ComboBox x:Name="NameOfMarketInput" VerticalAlignment="Bottom" Margin="40,0,40,15" Grid.Column="0" Grid.Row="3"/>
+        <Button x:Name="CreateButton" Grid.Row="4" Content="Сохранить чек" Margin="50,0,50,10" Click="CreateButton_Click"/>
+        <DataGrid x:Name="Order" Grid.Column="1" Grid.RowSpan="4" Margin="0,0,0,0"/>
+        <Label x:Name="ProfitText" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" MinHeight="35"/>
+    </Grid>
+</Page>

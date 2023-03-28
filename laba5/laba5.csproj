@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -56,43 +59,68 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="admin panel\cheks.xaml.cs">
+    <Compile Include="admin panel\Converter.cs" />
+    <Compile Include="admin panel\Models\authorization info model.cs" />
+    <Compile Include="admin panel\Models\DealersModel.cs" />
+    <Compile Include="admin panel\Models\EmployeesModel.cs" />
+    <Compile Include="admin panel\Models\GoodsModel.cs" />
+    <Compile Include="admin panel\Models\JobTitleModel.cs" />
+    <Compile Include="admin panel\Models\MarketsModel.cs" />
+    <Compile Include="admin panel\Models\ModelsModel.cs" />
+    <Compile Include="admin panel\Models\OrderInfoModel.cs" />
+    <Compile Include="admin panel\Models\StorageModel.cs" />
+    <Compile Include="admin panel\subpanels\cheks.xaml.cs">
       <DependentUpon>cheks.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin panel\employees.xaml.cs">
+    <Compile Include="admin panel\subpanels\employees.xaml.cs">
       <DependentUpon>employees.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin panel\markets.xaml.cs">
+    <Compile Include="admin panel\subpanels\JobTitle.xaml.cs">
+      <DependentUpon>JobTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin panel\subpanels\markets.xaml.cs">
       <DependentUpon>markets.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin panel\storage.xaml.cs">
+    <Compile Include="admin panel\subpanels\storage.xaml.cs">
       <DependentUpon>storage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="admin panel\Models\ChecksModel.cs" />
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Page Include="admin panel\AdminPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin panel\authorization info.xaml">
+    <Page Include="admin panel\subpanels\authorization info.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CashierPanel\CashierPanel.xaml">
+    <Page Include="admin panel\subpanels\JobTitle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin panel\cheks.xaml">
+    <Page Include="Cassa\CashierPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin panel\employees.xaml">
+    <Page Include="admin panel\subpanels\cheks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CashierPanel\HistoryOfOrders.xaml">
+    <Page Include="admin panel\subpanels\employees.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin panel\Dealers.xaml">
+    <Page Include="Cassa\HistoryOfOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin panel\subpanels\Dealers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cassa\ConfirmOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,20 +135,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="admin panel\authorization info.xaml.cs">
+    <Compile Include="admin panel\subpanels\authorization info.xaml.cs">
       <DependentUpon>authorization info.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CashierPanel\CartItems.cs" />
-    <Compile Include="CashierPanel\CashierPanel.xaml.cs">
+    <Compile Include="Cassa\CartItems.cs" />
+    <Compile Include="Cassa\CashierPanel.xaml.cs">
       <DependentUpon>CashierPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cassa\ConfirmOrder.xaml.cs">
+      <DependentUpon>ConfirmOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="mama.cs">
       <DependentUpon>mama.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CashierPanel\HistoryOfOrders.xaml.cs">
+    <Compile Include="Cassa\HistoryOfOrders.xaml.cs">
       <DependentUpon>HistoryOfOrders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin panel\Dealers.xaml.cs">
+    <Compile Include="admin panel\subpanels\Dealers.xaml.cs">
       <DependentUpon>Dealers.xaml</DependentUpon>
     </Compile>
     <Compile Include="mama.Designer.cs">
@@ -133,28 +164,32 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="admin panel\markets.xaml">
+    <Page Include="admin panel\subpanels\markets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin panel\storage.xaml">
+    <Page Include="admin panel\subpanels\storage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CashierPanel\Order.xaml">
+    <Page Include="Cassa\Order.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="admin panel\Models.xaml">
+    <Page Include="admin panel\subpanels\Models.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CashierPanel\Order.xaml.cs">
+    <Compile Include="Cassa\Order.xaml.cs">
       <DependentUpon>Order.xaml</DependentUpon>
     </Compile>
-    <Compile Include="admin panel\Models.xaml.cs">
+    <Compile Include="admin panel\subpanels\Models.xaml.cs">
       <DependentUpon>Models.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -185,6 +220,7 @@
     <None Include="mama.xss">
       <DependentUpon>mama.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

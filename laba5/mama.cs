@@ -12,6 +12,10 @@
 
 namespace laba5.mamaTableAdapters
 {
+    partial class goodsTableAdapter
+    {
+    }
+
     partial class storageTableAdapter
     {
     }
