@@ -13,23 +13,9 @@ C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.csproj.CoreCompileInputs.
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.exe
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.pdb
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\AdminPanel.g.cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\cheks.g.cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\employees.g.cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\markets.g.cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\storage.g.cs
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\AdminPanel.baml
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\cheks.baml
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\employees.baml
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\markets.baml
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\storage.baml
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\MainWindow.g.cs
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\MainWindow.baml
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\authorization info.g.cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Dealers.g.cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Models.g.cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\authorization info.baml
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Dealers.baml
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\Models.baml
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\bin\Debug\laba5.exe.config
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\bin\Debug\laba5.exe
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\bin\Debug\laba5.pdb
@@ -78,3 +64,22 @@ C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\Cassa\ConfirmOrder.baml
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\Cassa\Order.baml
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\Window1.g.cs
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\Window1.baml
+C:\Users\я\Desktop\laba5-master\laba5\bin\Debug\Newtonsoft.Json.dll
+C:\Users\я\Desktop\laba5-master\laba5\bin\Debug\Newtonsoft.Json.xml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\authorization info.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\JobTitle.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\cheks.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\employees.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\Dealers.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\markets.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\storage.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\Models.g.cs
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\authorization info.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\JobTitle.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\cheks.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\employees.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\Dealers.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\markets.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\storage.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\Models.baml
+C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.csproj.CopyComplete

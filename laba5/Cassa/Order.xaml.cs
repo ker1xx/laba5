@@ -55,7 +55,7 @@ namespace laba5
         {
             PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
             e.Column.Header = propertyDescriptor.DisplayName;
-            if (propertyDescriptor.DisplayName == "Id")
+            if (propertyDescriptor.DisplayName == "Id" || propertyDescriptor.DisplayName == "Profit")
             {
                 e.Cancel = true;
             }
@@ -71,7 +71,7 @@ namespace laba5
                 else if (!cart.Exists(x => x.Id == (int)item.Row[0]))
                     cart.Add(new CartItems((int)item.Row[0], (string)item.Row[5], (string)item.Row[6], (string)item.Row[2], (int)item.Row[4], 1, (decimal)item.Row[1]));
                 Profit += (decimal)item.Row[1]-(decimal)item[8];
-                cart.First(x => x.Id == (int)item.Row[0]).Profit -= ((decimal)item.Row[1] - (decimal)item[8]);
+                cart.First(x => x.Id == (int)item.Row[0]).Profit -= ((decimal)item[8] - (decimal)item[1]);
                 FullPrice += (decimal)item.Row[1];
                 Amount++;
                 Price.Text = "Общая стоимость заказа: " + FullPrice;
@@ -93,7 +93,7 @@ namespace laba5
                     else if (cart.First(x => x.Id == (int)item.Row[0]).Amount == 1)
                         cart.Remove(cart.First(x => x.Id == (int)item.Row[0]));
                     Profit -= (decimal)item.Row[1] - (decimal)item[8];
-                    cart.First(x => x.Id == (int)item.Row[0]).Profit -= ((decimal)item.Row[1] - (decimal)item[8]);
+                    cart.First(x => x.Id == (int)item.Row[0]).Profit -= ((decimal)item.Row[8] - (decimal)item[1]);
                     FullPrice -= (decimal)item.Row[1];
                     Amount--;
                     Price.Text = "Общая стоимость заказа: " + FullPrice;

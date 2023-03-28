@@ -1,6 +1,8 @@
 ﻿using laba5.mamaTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -48,7 +50,7 @@ namespace laba5
                 foreach (var a in cart)
                     checkcontains += $"\t{a.Name}\t количество: {a.Amount}\tцена за штуку: {a.Price} - \t {a.Price * a.Amount}\n";
                 var cassir = emp.GetCashiers().Rows;
-                checkcontains += $"Итого к оплате: {FullPrice}\nВнесено: {Given_Input.Text}\nСдача: {FullPrice-Convert.ToDecimal(Given_Input.Text)}\n";
+                checkcontains += $"Итого к оплате: {FullPrice}\nВнесено: {Given_Input.Text}\nСдача: {-1*(FullPrice-Convert.ToDecimal(Given_Input.Text))}\n";
                 for (int i = 0; i < cassir.Count;i++)
                 {
                     if (cassir[i][0].ToString() == NameOfCashier_Input.SelectedValue.ToString())
@@ -56,11 +58,22 @@ namespace laba5
                 }
                 checkcontains += $"Дата: {DateTime.Today}";
                 File.AppendAllText(desktop + "\\" + (checkinfo.GetData().Count + 1) + ".txt", checkcontains);
+                Process.Start(desktop + "\\" + (checkinfo.GetData().Count + 1) + ".txt");
             }
             else
             {
                 Window1 error = new Window1();
                 error.ShowDialog();
+            }
+        }
+
+        private void Order_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "Id" || propertyDescriptor.DisplayName == "Profit")
+            {
+                e.Cancel = true;
             }
         }
     }

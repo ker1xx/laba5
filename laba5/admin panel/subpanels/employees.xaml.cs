@@ -1,10 +1,12 @@
 ﻿using laba5.admin_panel;
 using laba5.admin_panel.Models;
+using laba5.admin_panel.subpanels;
 using laba5.mamaTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -30,7 +32,7 @@ namespace laba5
         job_titleTableAdapter job = new job_titleTableAdapter();
         int FullSalary = 0;
         AdminPanel AdminPanel;
-        string regex =@"\d*,\d{4}";
+        string regex = @"\d*,\d{4}";
         public employees(AdminPanel AdminPanel)
         {
             InitializeComponent();
@@ -68,7 +70,7 @@ namespace laba5
                         updated();
                         AdditionalInfo();
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         ErrorMessage.Text = "Вы ввели неверные значения";
                     }
@@ -81,7 +83,7 @@ namespace laba5
                         updated();
                         AdditionalInfo();
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
                         ErrorMessage.Text = "Вы ввели неверные значения";
                     }
@@ -92,38 +94,41 @@ namespace laba5
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            var item = Display.SelectedItem as DataRowView;
-            if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(SurnameInput.Text) || string.IsNullOrWhiteSpace(SalaryInput.Text) || JobTitleInput.SelectedIndex == -1 || SalaryInput.Text.Any(x => char.IsLetter(x)) || Convert.ToInt32(SalaryInput.Text) <= 0 || !Regex.IsMatch(SalaryInput.Text, regex))
-                ErrorMessage.Text = "Вы заполнили не все поля";
-            else
+            if (Display.SelectedItem != null)
             {
-
-                if (LastNameInput.Text == string.Empty)
-                {
-                    try
-                    {
-                        emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, null, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
-                        updated();
-                        AdditionalInfo();
-                    }
-                    catch (Exception )
-                    {
-                        ErrorMessage.Text = "Вы ввели неверные значения";
-                    }
-                }
+                var item = Display.SelectedItem as DataRowView;
+                if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(SurnameInput.Text) || string.IsNullOrWhiteSpace(SalaryInput.Text) || JobTitleInput.SelectedIndex == -1 || SalaryInput.Text.Any(x => char.IsLetter(x)) || Convert.ToDecimal(SalaryInput.Text) <= 0 || !Regex.IsMatch(SalaryInput.Text, regex))
+                    ErrorMessage.Text = "Вы заполнили не все поля";
                 else
                 {
-                    try
+
+                    if (LastNameInput.Text == string.Empty)
                     {
-                        emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, (string)LastNameInput.Text, (int)JobTitleInput.SelectedValue, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
-                        updated();
-                        AdditionalInfo();
+                        try
+                        {
+                            emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, null, (int)JobTitleInput.SelectedIndex, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
+                            updated();
+                            AdditionalInfo();
+                        }
+                        catch (Exception)
+                        {
+                            ErrorMessage.Text = "Вы ввели неверные значения";
+                        }
                     }
-                    catch (Exception )
+                    else
                     {
-                        ErrorMessage.Text = "Вы ввели неверные значения";
+                        try
+                        {
+                            emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, LastNameInput.Text, (int)JobTitleInput.SelectedValue, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
+                            updated();
+                            AdditionalInfo();
+                        }
+                        catch (Exception)
+                        {
+                            ErrorMessage.Text = "Вы ввели неверные значения";
+                        }
+                        Display.ItemsSource = emp.names();
                     }
-                    Display.ItemsSource = emp.names();
                 }
             }
         }
@@ -180,6 +185,11 @@ namespace laba5
             List<EmployeesModel> forimport = Converter.DeserializeObject<List<EmployeesModel>>();
             foreach (var item in forimport)
                 emp.InsertQuery(item.Name, item.Surname, item.Lastname, item.JobTitleId, item.Salary);
+        }
+
+        private void JobTitleButton_Click(object sender, RoutedEventArgs e)
+        {
+            AdminPanel.Frame.Content = new JobTitle();
         }
     }
 }

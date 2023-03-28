@@ -59,14 +59,14 @@
         <Button Style="{StaticResource SideButton}" x:Name="UpdateButton" Grid.Row="3" Content="Изменить" Click="UpdateButton_Click"/>
         <Button Style="{StaticResource SideButton}" x:Name="DeleteButton" Grid.Row="4" Content="Удалить" Click="DeleteButton_Click"/>
         <Button Style="{StaticResource SideButton}" x:Name="AutharizationButton" Grid.Row="5" Content="Данные пользователей" Click="AutharizationButton_Click" />
-        <Button Style="{StaticResource SideButton}" x:Name="JobTitleButton" Grid.Row="6" Content="Вакансии" Click="AutharizationButton_Click" />
+        <Button Style="{StaticResource SideButton}" x:Name="JobTitleButton" Grid.Row="6" Content="Вакансии" Click="JobTitleButton_Click" />
         <Button x:Name="InsertJson" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="4" Margin="2" VerticalContentAlignment="Center" Content="Импортировать данные" Click="InsertJson_Click"/>
         <TextBlock Style="{StaticResource SideText}" x:Name="Info1" Grid.Row="8" Grid.RowSpan="2"/>
         <TextBlock Style="{StaticResource SideText}" x:Name="Info2" Grid.Row="10" Grid.RowSpan="2"/>
         <TextBox x:Name="NameInput" Grid.Row="16" Grid.Column="0" VerticalAlignment="Center" Margin="2"/>
-        <TextBox x:Name="SurnameInput" Grid.Row="16" Grid.Column="2" VerticalAlignment="Center" Margin="5" FontSize="14"/>
-        <TextBox x:Name="LastNameInput" Grid.Row="16" Grid.Column="4" VerticalAlignment="Center" Margin="5" FontSize="14"/>
-        <TextBox x:Name="SalaryInput" Grid.Row="17" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="14"/>
+        <TextBox x:Name="SurnameInput" Grid.Row="16" Grid.Column="2" VerticalAlignment="Center" Margin="5" />
+        <TextBox x:Name="LastNameInput" Grid.Row="16" Grid.Column="4" VerticalAlignment="Center" Margin="5" />
+        <TextBox x:Name="SalaryInput" Grid.Row="17" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
         <ComboBox x:Name="JobTitleInput" Grid.Row="17" Grid.Column="3" VerticalAlignment="Center" Margin="5"/>
         <TextBlock Style="{StaticResource Bottom}" x:Name="NameText" Text="Имя:" Grid.Row="15" Grid.Column="0"/>
         <TextBlock Style="{StaticResource Bottom}" x:Name="SurnameText" Text="Фамилия" Grid.Row="15" Grid.Column="2"/>

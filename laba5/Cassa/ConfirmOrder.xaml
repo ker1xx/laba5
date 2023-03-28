@@ -50,7 +50,7 @@
         <TextBlock x:Name="NameOfMarket" Grid.Row="3" Text="Магазин: "/>
         <ComboBox x:Name="NameOfMarketInput" VerticalAlignment="Bottom" Margin="40,0,40,15" Grid.Column="0" Grid.Row="3"/>
         <Button x:Name="CreateButton" Grid.Row="4" Content="Сохранить чек" Margin="50,0,50,10" Click="CreateButton_Click"/>
-        <DataGrid x:Name="Order" Grid.Column="1" Grid.RowSpan="4" Margin="0,0,0,0"/>
+        <DataGrid x:Name="Order" Grid.Column="1" Grid.RowSpan="4" Margin="0,0,0,0" AutoGeneratingColumn="Order_AutoGeneratingColumn"/>
         <Label x:Name="ProfitText" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" MinHeight="35"/>
     </Grid>
 </Page>

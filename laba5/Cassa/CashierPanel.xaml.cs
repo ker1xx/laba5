@@ -28,5 +28,10 @@ namespace laba5
         {
             Frame.Content = new Order(this);
         }
+
+        private void PreviousOrders_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Content = new HistoryOfOrders();
+        }
     }
 }

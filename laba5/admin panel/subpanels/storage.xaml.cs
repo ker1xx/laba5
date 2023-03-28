@@ -135,12 +135,12 @@ namespace laba5
 
         private void ModelButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            AdminPanel.Frame.Content = new Dealers();
+            AdminPanel.Frame.Content = new Models();
         }
 
         private void DealerButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            AdminPanel.Frame.Content = new Models();
+            AdminPanel.Frame.Content = new Dealers();
         }
 
         private void InsertJson_Click(object sender, System.Windows.RoutedEventArgs e)

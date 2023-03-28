@@ -29,7 +29,7 @@
             <RowDefinition Height="0.15*"/>
         </Grid.RowDefinitions>
         <Button x:Name="NewOrder" Style="{StaticResource TopButtons}" Content="Новый заказ" Grid.Column="0" Grid.Row="0" Click="NewOrder_Click"/>
-        <Button x:Name="PreviousOrders" Style="{StaticResource TopButtons}" Content="История заказов" Grid.Column="1" Grid.Row="0"/>
+        <Button x:Name="PreviousOrders" Style="{StaticResource TopButtons}" Content="История заказов" Grid.Column="1" Grid.Row="0" Click="PreviousOrders_Click"/>
         <Frame x:Name="Frame" Grid.ColumnSpan="2" Grid.Row="1"  NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
