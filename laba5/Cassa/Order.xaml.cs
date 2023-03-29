@@ -108,15 +108,7 @@ namespace laba5
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             if (ListedItems.Items.Count != 0)
-            {
-                int i = 0;
-                foreach (var item1 in cart)
-                {
-                    order.InsertQuery(order.GetData().Count + 1, item1.Id, item1.Amount*(item1.Price - item1.Profit));
-
-                }
                 cartPanel.Frame.Content = new ConfirmOrder(cart, FullPrice, Profit);
-            }
         }
 
     }

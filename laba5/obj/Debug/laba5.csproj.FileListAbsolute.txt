@@ -22,32 +22,12 @@ C:\Users\klink\source\repos\ker1xx\laba5\laba5\bin\Debug\laba5.pdb
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.AssemblyReference.cache
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.SuggestedBindingRedirects.cache
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\AdminPanel.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\authorization info.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\CashierPanel.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\cheks.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\employees.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\HistoryOfOrders.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Dealers.g.cs
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\MainWindow.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\markets.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\storage.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\Order.g.cs
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Models.g.cs
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\App.g.cs
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5_MarkupCompile.cache
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5_MarkupCompile.lref
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\AdminPanel.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\authorization info.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\CashierPanel.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\cheks.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\employees.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\HistoryOfOrders.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Dealers.baml
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\MainWindow.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\markets.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\storage.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\CashierPanel\Order.baml
-C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\Models.baml
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5.g.resources
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5.Properties.Resources.resources
 C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.GenerateResource.cache
@@ -83,3 +63,34 @@ C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\markets.b
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\storage.baml
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\admin panel\subpanels\Models.baml
 C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\laba5.csproj.CopyComplete
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\bin\Debug\Newtonsoft.Json.dll
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\bin\Debug\Newtonsoft.Json.xml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\authorization info.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\JobTitle.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\CashierPanel.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\cheks.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\employees.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\HistoryOfOrders.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\Dealers.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\ConfirmOrder.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\markets.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\storage.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\Order.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\Models.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Window1.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\authorization info.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\JobTitle.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\CashierPanel.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\cheks.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\employees.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\HistoryOfOrders.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\Dealers.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\ConfirmOrder.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\markets.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\storage.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Cassa\Order.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\Models.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\Window1.baml
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\laba5.csproj.CopyComplete
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\GoodsPanel.g.cs
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\admin panel\subpanels\GoodsPanel.baml

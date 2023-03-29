@@ -16,7 +16,7 @@ namespace laba5
     public partial class markets : Page
     {
         marketTableAdapter market = new marketTableAdapter();
-        string regex = @"\d{2}:\d{2}:\d{2}:";
+        string regex = @"\d{2}:\d{2}:\d{2}";
         public markets()
         {
             InitializeComponent();

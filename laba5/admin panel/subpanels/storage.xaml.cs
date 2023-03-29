@@ -23,7 +23,7 @@ namespace laba5
         dealerTableAdapter dealer = new dealerTableAdapter();
         AdminPanel AdminPanel;
         int AmountOfItems = 0;
-        int FullFirstPrice = 0;
+        decimal FullFirstPrice = 0;
         string regex = @"\d*,\d{4}";
 
         public storage(AdminPanel AdminPanel)
@@ -33,10 +33,10 @@ namespace laba5
             Display.IsReadOnly = true;
             var info = storageData.GetData();
             AdditionalInfo();
-            DealerInput.ItemsSource = model.GetData();
+            DealerInput.ItemsSource = dealer.GetData();
             DealerInput.DisplayMemberPath = "name";
             DealerInput.SelectedValuePath = "id";
-            ModelInput.ItemsSource = dealer.GetData();
+            ModelInput.ItemsSource = model.GetData();
             ModelInput.DisplayMemberPath = "name";
             ModelInput.SelectedValuePath = "id";
             this.AdminPanel = AdminPanel;
@@ -65,7 +65,7 @@ namespace laba5
             {
                 try
                 {
-                    storageData.InsertQuery((int)ModelInput.SelectedIndex, Convert.ToInt32(AmountInput.Text), (int)DealerInput.SelectedIndex, Convert.ToInt32(FirstPriceInput.Text));
+                    storageData.InsertQuery(Convert.ToInt32(ModelInput.SelectedValue), Convert.ToInt32(AmountInput.Text), Convert.ToInt32(DealerInput.SelectedValue), Convert.ToDecimal(FirstPriceInput.Text));
                     updated();
                     AdditionalInfo();
                 }
@@ -148,6 +148,11 @@ namespace laba5
             List<StorageModel> forimport = Converter.DeserializeObject<List<StorageModel>>();
             foreach (var item in forimport)
                 storageData.InsertQuery(item.ModelId, item.Amount,item.IdDealer, item.first_price);
+        }
+
+        private void GoodsButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            AdminPanel.Frame.Content = new GoodsPanel();
         }
     }
 }

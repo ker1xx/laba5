@@ -1,12 +1,13 @@
-﻿<Page x:Class="laba5.storage"
+﻿<Page x:Class="laba5.GoodsPanel"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:laba5"
       mc:Ignorable="d" 
-      d:DesignHeight="625" d:DesignWidth="1200"
-      Title="storage" Background="White">
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GoodsPanel" Background="White">
+
 
     <Page.Resources>
         <Style TargetType="TextBlock" x:Key="Bottom">
@@ -55,24 +56,20 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="Display" Margin="5" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="13" Grid.Column="1" SelectionChanged="Display_SelectionChanged" AutoGeneratingColumn="Display_AutoGeneratingColumn_1"/>
+        <DataGrid x:Name="Display" Margin="5" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="13" Grid.Column="1" SelectionChanged="Display_SelectionChanged" />
         <Button Style="{StaticResource SideButton}" x:Name="CreateButton" Grid.Row="2" Content="Добавить" Click="CreateButton_Click"/>
         <Button Style="{StaticResource SideButton}" x:Name="UpdateButton" Grid.Row="3" Content="Изменить" Click="UpdateButton_Click"/>
         <Button Style="{StaticResource SideButton}" x:Name="DeleteButton" Grid.Row="4" Content="Удалить" Click="DeleteButton_Click"/>
-        <Button Style="{StaticResource SideButton}" x:Name="DealerButton" Grid.Row="6" Content="Поставщики" Click="DealerButton_Click"/>
-        <Button Style="{StaticResource SideButton}" x:Name="ModelButton" Grid.Row="7" Content="Модели" Click="ModelButton_Click"/>
-        <Button Style="{StaticResource SideButton}" x:Name="GoodsButton" Grid.Row="5" Content="Товары" Click="GoodsButton_Click" />
-        <Button x:Name="InsertJson" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="4" Margin="2" VerticalContentAlignment="Center" Content="Импортировать данные" Click="InsertJson_Click"/>
         <TextBlock Style="{StaticResource SideText}" x:Name="Info1" Grid.Row="8" Grid.RowSpan="2"/>
         <TextBlock Style="{StaticResource SideText}" x:Name="Info2" Grid.Row="10" Grid.RowSpan="2"/>
-        <TextBox x:Name="AmountInput" Grid.Row="15" Grid.Column="0" VerticalAlignment="Center" Margin="2"/>
-        <TextBox x:Name="FirstPriceInput" Grid.Row="15" Grid.Column="2" VerticalAlignment="Center" Margin="5" FontSize="14"/>
-        <ComboBox x:Name="DealerInput" Grid.Row="16" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="14"/>
+        <TextBox x:Name="SexInput" Grid.Row="15" Grid.Column="0" VerticalAlignment="Center" Margin="2"/>
+        <TextBox x:Name="SizeInput" Grid.Row="15" Grid.Column="2" VerticalAlignment="Center" Margin="5" FontSize="14"/>
+        <TextBox x:Name="PriceInput" Grid.Row="16" Grid.Column="1" VerticalAlignment="Center" Margin="5" FontSize="14"/>
         <ComboBox x:Name="ModelInput" Grid.Row="16" Grid.Column="3" VerticalAlignment="Center" Margin="5" FontSize="14"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="NameText" Text="Доступное количество" Grid.Row="14" Grid.Column="0"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="SurnameText" Text="Закупочная цена" Grid.Row="14" Grid.Column="2"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="LastnameText" Text="Поставщик" Grid.Row="15" Grid.Column="1"/>
-        <TextBlock Style="{StaticResource Bottom}" x:Name="SalaryText" Text="Модель" Grid.Row="15" Grid.Column="3"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="SexText" Text="Пол" Grid.Row="14" Grid.Column="0"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="SizeText" Text="Размер" Grid.Row="14" Grid.Column="2"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="PriceText" Text="Цена" Grid.Row="15" Grid.Column="1"/>
+        <TextBlock Style="{StaticResource Bottom}" x:Name="ModelText" Text="Модель" Grid.Row="15" Grid.Column="3"/>
         <TextBlock x:Name="ErrorMessage" Grid.ColumnSpan="5" Grid.Row="17" TextAlignment="Center"/>
     </Grid>
 </Page>

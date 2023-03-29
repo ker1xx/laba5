@@ -114,12 +114,12 @@ namespace laba5
                         {
                             ErrorMessage.Text = "Вы ввели неверные значения";
                         }
-                    }
+                    }   
                     else
                     {
                         try
-                        {
-                            emp.UpdateQuery((string)NameInput.Text, (string)SurnameInput.Text, LastNameInput.Text, (int)JobTitleInput.SelectedValue, Convert.ToDecimal(SalaryInput.Text), (int)item[0]);
+                        { 
+                            emp.UpdateQuery(NameInput.Text.ToString(),SurnameInput.Text.ToString(), LastNameInput.Text.ToString(), Convert.ToInt32(JobTitleInput.SelectedValue), Convert.ToDecimal(SalaryInput.Text), Convert.ToInt32(item[0]));
                             updated();
                             AdditionalInfo();
                         }

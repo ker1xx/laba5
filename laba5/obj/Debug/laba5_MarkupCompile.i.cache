@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\я\Desktop\laba5-master\laba5\obj\Debug\
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\obj\Debug\
 laba5
 none
 false
 DEBUG;TRACE
-C:\Users\я\Desktop\laba5-master\laba5\App.xaml
-151183413846
+C:\Users\klink\source\repos\ker1xx\laba5\laba5\App.xaml
+161774673896
 
-35-513812647
-15562887509
-admin panel\AdminPanel.xaml;admin panel\subpanels\authorization info.xaml;admin panel\subpanels\JobTitle.xaml;Cassa\CashierPanel.xaml;admin panel\subpanels\cheks.xaml;admin panel\subpanels\employees.xaml;Cassa\HistoryOfOrders.xaml;admin panel\subpanels\Dealers.xaml;Cassa\ConfirmOrder.xaml;MainWindow.xaml;admin panel\subpanels\markets.xaml;admin panel\subpanels\storage.xaml;Cassa\Order.xaml;admin panel\subpanels\Models.xaml;Window1.xaml;
+36985615271
+15-1323609015
+admin panel\AdminPanel.xaml;admin panel\subpanels\authorization info.xaml;admin panel\subpanels\JobTitle.xaml;Cassa\CashierPanel.xaml;admin panel\subpanels\cheks.xaml;admin panel\subpanels\employees.xaml;Cassa\HistoryOfOrders.xaml;admin panel\subpanels\Dealers.xaml;Cassa\ConfirmOrder.xaml;admin panel\subpanels\GoodsPanel.xaml;MainWindow.xaml;admin panel\subpanels\markets.xaml;admin panel\subpanels\storage.xaml;Cassa\Order.xaml;admin panel\subpanels\Models.xaml;Window1.xaml;
 
 False
 

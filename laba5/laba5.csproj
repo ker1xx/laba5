@@ -85,6 +85,9 @@
       <DependentUpon>storage.xaml</DependentUpon>
     </Compile>
     <Compile Include="admin panel\Models\ChecksModel.cs" />
+    <Compile Include="admin panel\subpanels\GoodsPanel.xaml.cs">
+      <DependentUpon>GoodsPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Cassa\ConfirmOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="admin panel\subpanels\GoodsPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

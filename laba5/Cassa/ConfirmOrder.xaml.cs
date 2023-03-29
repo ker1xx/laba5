@@ -19,6 +19,7 @@ namespace laba5
         employeeTableAdapter emp = new employeeTableAdapter();
         check_infoTableAdapter checkinfo = new check_infoTableAdapter();
         marketTableAdapter markets = new marketTableAdapter();
+        orderTableAdapter order = new orderTableAdapter();
         decimal FullPrice = 0;
         string regex = @"\d*,\d{4}";
         List<CartItems> cart;
@@ -43,6 +44,11 @@ namespace laba5
             if (NameOfMarketInput.SelectedItem!=null && NameOfCashier_Input.SelectedItem != null && !string.IsNullOrWhiteSpace(FullPrice_Input.Text) && !FullPrice_Input.Text.Any(x => char.IsLetter(x)) && Regex.IsMatch(Given_Input.Text, regex) && Convert.ToDecimal(Given_Input.Text) >= FullPrice)
             {
                 checkinfo.InsertQuery((int)NameOfCashier_Input.SelectedValue, (int)NameOfMarketInput.SelectedValue, FullPrice, DateTime.Now);
+                foreach (var item1 in cart)
+                {
+                    order.InsertQuery(order.GetData().Count + 1, item1.Id, item1.Amount * (item1.Price - item1.Profit));
+
+                }
                 string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 FileStream stream = File.Create(desktop + "\\" + (checkinfo.GetData().Count + 1) + ".txt");
                 stream.Close();
@@ -56,7 +62,7 @@ namespace laba5
                     if (cassir[i][0].ToString() == NameOfCashier_Input.SelectedValue.ToString())
                         checkcontains += $"\tКассир: {cassir[i][1]} {cassir[i][2]} {cassir[i][3]}\n";
                 }
-                checkcontains += $"Дата: {DateTime.Today}";
+                checkcontains += $"Дата: {DateTime.Now}";
                 File.AppendAllText(desktop + "\\" + (checkinfo.GetData().Count + 1) + ".txt", checkcontains);
                 Process.Start(desktop + "\\" + (checkinfo.GetData().Count + 1) + ".txt");
             }
