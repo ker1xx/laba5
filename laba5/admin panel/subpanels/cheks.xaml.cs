@@ -68,8 +68,11 @@ namespace laba5
         private void InsertJson_Click(object sender, RoutedEventArgs e)
         {
             List<ChecksModel> forimport = Converter.DeserializeObject<List<ChecksModel>>();
-            foreach (var item in forimport)
-                check.InsertQuery(item.employee_id, item.market_id, item.total_money, item.date);
+            if (forimport != null)
+            {
+                foreach (var item in forimport)
+                    check.InsertQuery(item.employee_id, item.market_id, item.total_money, item.date);
+            }
         }
     }
 }

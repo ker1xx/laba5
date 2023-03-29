@@ -55,7 +55,16 @@ namespace laba5
         private void UpdateButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             var item = Display.SelectedItem as DataRowView;
-            if (string.IsNullOrWhiteSpace(SexInput.Text) || string.IsNullOrWhiteSpace(SizeInput.Text) || string.IsNullOrWhiteSpace(PriceInput.Text) || PriceInput.Text.Any(x => char.IsLetter(x)) || SexInput.Text.Any(x => char.IsLetter(x)) || !Regex.IsMatch(PriceInput.Text, regex) || ModelInput.SelectedValue == null)
+            if (string.IsNullOrWhiteSpace(SexInput.Text) || 
+                string.IsNullOrWhiteSpace(SizeInput.Text) ||
+                string.IsNullOrWhiteSpace(PriceInput.Text) || 
+                PriceInput.Text.Any(x => char.IsLetter(x)) ||
+                SexInput.Text.Any(x => char.IsLetter(x)) || 
+                !Regex.IsMatch(PriceInput.Text, regex) || 
+                ModelInput.SelectedValue == null ||
+                SexInput.Text.Any(x => char.IsControl(x)) ||
+                PriceInput.Text.Any(x => char.IsControl(x)) ||
+                SizeInput.Text.Any(x => char.IsControl(x)))
             {
                 ErrorMessage.Text = "Вы заполнили не все поля";
             }
@@ -92,8 +101,8 @@ namespace laba5
             if (Display.SelectedItem != null)
             {
                 var item = Display.SelectedItem as DataRowView;
-                PriceInput.Text = (string)item[1];
-                SexInput.Text = (string)item[2];
+                PriceInput.Text = Convert.ToString(item[1]);
+                SexInput.Text = Convert.ToString(item[2]);
                 SizeInput.Text = item[3].ToString();
                 ModelInput.SelectedValue = item[4].ToString();
                 ErrorMessage.Text = string.Empty;

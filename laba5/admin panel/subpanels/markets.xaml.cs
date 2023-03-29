@@ -27,7 +27,19 @@ namespace laba5
 
         private void CreateButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(AdressInput.Text) ||string.IsNullOrWhiteSpace(BeginInput.Text) || string.IsNullOrWhiteSpace(EndInput.Text) || BeginInput.Text.Any(x => char.IsLetter(x)) || EndInput.Text.Any(x => char.IsLetter(x)) || !Regex.IsMatch(BeginInput.Text,regex) || !Regex.IsMatch(EndInput.Text, regex))
+            if (string.IsNullOrWhiteSpace(NameInput.Text) ||
+                string.IsNullOrWhiteSpace(AdressInput.Text) ||
+                string.IsNullOrWhiteSpace(BeginInput.Text) ||
+                string.IsNullOrWhiteSpace(EndInput.Text) ||
+                BeginInput.Text.Any(x => char.IsLetter(x)) ||
+                EndInput.Text.Any(x => char.IsLetter(x)) ||
+                !Regex.IsMatch(BeginInput.Text, regex) ||
+                !Regex.IsMatch(EndInput.Text, regex) ||
+                TimeSpan.Parse(BeginInput.Text) >= TimeSpan.Parse(EndInput.Text) ||
+                NameInput.Text.Any(x => char.IsControl(x)) ||
+                AdressInput.Text.Any(x => char.IsControl(x)) ||
+                BeginInput.Text.Any(x => char.IsControl(x)) ||
+                EndInput.Text.Any(x => char.IsControl(x)))
                 ErrorMessage.Text = "Вы заполнили не все поля";
             else
             {
@@ -37,7 +49,7 @@ namespace laba5
                     updated();
                     AdditionalInfo();
                 }
-                catch (Exception ) { ErrorMessage.Text = "Вы ввели неверные значения"; }
+                catch (Exception) { ErrorMessage.Text = "Вы ввели неверные значения"; }
                 AdditionalInfo();
             }
         }
@@ -45,10 +57,21 @@ namespace laba5
         private void UpdateButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             var item = Display.SelectedItem as DataRowView;
-            if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(AdressInput.Text) || string.IsNullOrWhiteSpace(BeginInput.Text) || string.IsNullOrWhiteSpace(EndInput.Text) || BeginInput.Text.Any(x => char.IsLetter(x)) || EndInput.Text.Any(x => char.IsLetter(x)) || !Regex.IsMatch(BeginInput.Text, regex) || !Regex.IsMatch(EndInput.Text, regex))
-            {
+            if (string.IsNullOrWhiteSpace(NameInput.Text) ||
+                            string.IsNullOrWhiteSpace(AdressInput.Text) ||
+                            string.IsNullOrWhiteSpace(BeginInput.Text) ||
+                            string.IsNullOrWhiteSpace(EndInput.Text) ||
+                            BeginInput.Text.Any(x => char.IsLetter(x)) ||
+                            EndInput.Text.Any(x => char.IsLetter(x)) ||
+                            !Regex.IsMatch(BeginInput.Text, regex) ||
+                            !Regex.IsMatch(EndInput.Text, regex) ||
+                            TimeSpan.Parse(BeginInput.Text.ToString()) >= TimeSpan.Parse(EndInput.Text.ToString()) ||
+                            NameInput.Text.Any(x => char.IsControl(x)) ||
+                            AdressInput.Text.Any(x => char.IsControl(x)) ||
+                            BeginInput.Text.Any(x => char.IsControl(x)) ||
+                            EndInput.Text.Any(x => char.IsControl(x)))
+
                 ErrorMessage.Text = "Вы заполнили не все поля";
-            }
             else
             {
                 try
@@ -57,7 +80,7 @@ namespace laba5
                     updated();
                     AdditionalInfo();
                 }
-                catch (Exception ) { ErrorMessage.Text = "Вы ввели неверные значения"; }
+                catch (Exception) { ErrorMessage.Text = "Вы ввели неверные значения"; }
                 AdditionalInfo();
             }
         }
@@ -87,21 +110,25 @@ namespace laba5
         private void Display_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Display.SelectedItem != null)
-            { 
-            var item = Display.SelectedItem as DataRowView;
-            NameInput.Text = (string)item[2];
-            AdressInput.Text = (string)item[1];
-            BeginInput.Text = ((TimeSpan)item[3]).ToString();
-            EndInput.Text = ((TimeSpan)item[4]).ToString();
-            ErrorMessage.Text = string.Empty;
+            {
+                var item = Display.SelectedItem as DataRowView;
+                NameInput.Text = (string)item[2];
+                AdressInput.Text = (string)item[1];
+                BeginInput.Text = ((DateTime)item[3]).ToString("HH:mm:ss");
+                EndInput.Text = ((DateTime)item[4]).ToString("HH:mm:ss");
+                ErrorMessage.Text = string.Empty;
             }
         }
 
         private void InsertJson_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             List<MarketsModel> forimport = Converter.DeserializeObject<List<MarketsModel>>();
-            foreach (var item in forimport)
-                market.InsertQuery(item.Adress, item.Begin_Work_Time, item.End_Work_Time, item.name);
+            if (forimport != null)
+            {
+                foreach (var item in forimport)
+
+                    market.InsertQuery(item.Adress, item.Begin_Work_Time, item.End_Work_Time, item.name);
+            }
         }
     }
 }

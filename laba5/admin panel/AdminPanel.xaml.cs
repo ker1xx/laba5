@@ -20,11 +20,11 @@ namespace laba5
     /// </summary>
     public partial class AdminPanel : Window
     {
-
-        public AdminPanel()
+        MainWindow MainWindow;
+        public AdminPanel(MainWindow mainWindow)
         {
             InitializeComponent();
-
+            this.MainWindow = mainWindow;
 
         }
 
@@ -48,6 +48,11 @@ namespace laba5
         private void StorageButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Content = new storage(this);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MainWindow.Visibility = Visibility.Visible;
         }
     }
 }

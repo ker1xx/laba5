@@ -58,7 +58,12 @@ namespace laba5
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(SurnameInput.Text) || string.IsNullOrWhiteSpace(SalaryInput.Text) || JobTitleInput.SelectedIndex == -1 || Convert.ToInt32(SalaryInput.Text) <= 0 || !Regex.IsMatch(SalaryInput.Text, regex))
+            if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(SurnameInput.Text) ||
+                                string.IsNullOrWhiteSpace(SalaryInput.Text) || JobTitleInput.SelectedIndex == -1 ||
+                                SalaryInput.Text.Any(x => char.IsLetter(x)) || Convert.ToDecimal(SalaryInput.Text) <= 0 ||
+                                !Regex.IsMatch(SalaryInput.Text, regex) || NameInput.Text.Any(x => char.IsControl(x)) ||
+                                SurnameInput.Text.Any(x => char.IsControl(x)) || JobTitleInput.Text.Any(x => char.IsControl(x)) ||
+                                SalaryInput.Text.Any(x => char.IsControl(x)))
                 ErrorMessage.Text = "Вы заполнили не все поля";
             else
             {
@@ -97,7 +102,12 @@ namespace laba5
             if (Display.SelectedItem != null)
             {
                 var item = Display.SelectedItem as DataRowView;
-                if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(SurnameInput.Text) || string.IsNullOrWhiteSpace(SalaryInput.Text) || JobTitleInput.SelectedIndex == -1 || SalaryInput.Text.Any(x => char.IsLetter(x)) || Convert.ToDecimal(SalaryInput.Text) <= 0 || !Regex.IsMatch(SalaryInput.Text, regex))
+                if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(SurnameInput.Text) ||
+                    string.IsNullOrWhiteSpace(SalaryInput.Text) || JobTitleInput.SelectedIndex == -1 ||
+                    SalaryInput.Text.Any(x => char.IsLetter(x)) || Convert.ToDecimal(SalaryInput.Text) <= 0 ||
+                    !Regex.IsMatch(SalaryInput.Text, regex) || NameInput.Text.Any(x => char.IsControl(x)) ||
+                    SurnameInput.Text.Any(x => char.IsControl(x)) || JobTitleInput.Text.Any(x => char.IsControl(x)) ||
+                    SalaryInput.Text.Any(x => char.IsControl(x)))
                     ErrorMessage.Text = "Вы заполнили не все поля";
                 else
                 {
@@ -114,12 +124,12 @@ namespace laba5
                         {
                             ErrorMessage.Text = "Вы ввели неверные значения";
                         }
-                    }   
+                    }
                     else
                     {
                         try
-                        { 
-                            emp.UpdateQuery(NameInput.Text.ToString(),SurnameInput.Text.ToString(), LastNameInput.Text.ToString(), Convert.ToInt32(JobTitleInput.SelectedValue), Convert.ToDecimal(SalaryInput.Text), Convert.ToInt32(item[0]));
+                        {
+                            emp.UpdateQuery(NameInput.Text.ToString(), SurnameInput.Text.ToString(), LastNameInput.Text.ToString(), Convert.ToInt32(JobTitleInput.SelectedValue), Convert.ToDecimal(SalaryInput.Text), Convert.ToInt32(item[0]));
                             updated();
                             AdditionalInfo();
                         }
@@ -183,8 +193,11 @@ namespace laba5
         private void InsertJson_Click(object sender, RoutedEventArgs e)
         {
             List<EmployeesModel> forimport = Converter.DeserializeObject<List<EmployeesModel>>();
-            foreach (var item in forimport)
-                emp.InsertQuery(item.Name, item.Surname, item.Lastname, item.JobTitleId, item.Salary);
+            if (forimport != null)
+            {
+                foreach (var item in forimport)
+                    emp.InsertQuery(item.Name, item.Surname, item.Lastname, item.JobTitleId, item.Salary);
+            }
         }
 
         private void JobTitleButton_Click(object sender, RoutedEventArgs e)

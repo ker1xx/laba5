@@ -38,5 +38,15 @@ namespace laba5.Properties {
                 this["notebook"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ker1xx;Initial Catalog=laba5;Integrated Security=True")]
+        public string laba5ConnectionString {
+            get {
+                return ((string)(this["laba5ConnectionString"]));
+            }
+        }
     }
 }

@@ -41,7 +41,9 @@ namespace laba5
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (NameOfMarketInput.SelectedItem!=null && NameOfCashier_Input.SelectedItem != null && !string.IsNullOrWhiteSpace(FullPrice_Input.Text) && !FullPrice_Input.Text.Any(x => char.IsLetter(x)) && Regex.IsMatch(Given_Input.Text, regex) && Convert.ToDecimal(Given_Input.Text) >= FullPrice)
+            if (NameOfMarketInput.SelectedItem!=null && NameOfCashier_Input.SelectedItem != null && 
+                !string.IsNullOrWhiteSpace(FullPrice_Input.Text) && !FullPrice_Input.Text.Any(x => char.IsLetter(x))
+                && Regex.IsMatch(Given_Input.Text, regex) && Convert.ToDecimal(Given_Input.Text) >= FullPrice)
             {
                 checkinfo.InsertQuery((int)NameOfCashier_Input.SelectedValue, (int)NameOfMarketInput.SelectedValue, FullPrice, DateTime.Now);
                 foreach (var item1 in cart)
@@ -56,7 +58,8 @@ namespace laba5
                 foreach (var a in cart)
                     checkcontains += $"\t{a.Name}\t количество: {a.Amount}\tцена за штуку: {a.Price} - \t {a.Price * a.Amount}\n";
                 var cassir = emp.GetCashiers().Rows;
-                checkcontains += $"Итого к оплате: {FullPrice}\nВнесено: {Given_Input.Text}\nСдача: {-1*(FullPrice-Convert.ToDecimal(Given_Input.Text))}\n";
+                checkcontains += $"Итого к оплате: {FullPrice}\nВнесено: {Given_Input.Text}\nСдача: " +
+                    $"{-1*(FullPrice-Convert.ToDecimal(Given_Input.Text))}\n";
                 for (int i = 0; i < cassir.Count;i++)
                 {
                     if (cassir[i][0].ToString() == NameOfCashier_Input.SelectedValue.ToString())

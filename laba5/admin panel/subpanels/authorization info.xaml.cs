@@ -38,7 +38,13 @@ namespace laba5
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(LoginInput.Text) || string.IsNullOrWhiteSpace(PasswordInput.Text) || string.IsNullOrWhiteSpace(IDInput.Text) || IDInput.Text.Any(x => char.IsDigit(x)))
+            if (string.IsNullOrWhiteSpace(LoginInput.Text) || 
+                string.IsNullOrWhiteSpace(PasswordInput.Text) || 
+                string.IsNullOrWhiteSpace(IDInput.Text) || 
+                !IDInput.Text.Any(x => char.IsDigit(x)) || 
+                LoginInput.Text.Any(x => char.IsControl(x)) ||
+                PasswordInput.Text.Any(x => char.IsControl(x)) || 
+                IDInput.Text.Any(x => char.IsControl(x)))
                 ErrorMessage.Text = "Вы заполнили не все поля";
             else
             {
@@ -49,36 +55,48 @@ namespace laba5
                     updated();
                     AdditionalInfo();
                 }
-                catch(Exception ) { ErrorMessage.Text = "Вы ввели неверные значения"; }
+                catch (Exception) { ErrorMessage.Text = "Вы ввели неверные значения"; }
             }
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            var a = auth.getlastid().Rows[0];
             if (Display.SelectedItem != null)
             {
-                var item = Display.SelectedItem as DataRowView;
-                if (string.IsNullOrWhiteSpace(LoginInput.Text) || string.IsNullOrWhiteSpace(PasswordInput.Text) || string.IsNullOrWhiteSpace(IDInput.Text) || IDInput.Text.Any(x => char.IsDigit(x)))
-                    ErrorMessage.Text = "Вы заполнили не все поля";
-                else
+                var a = auth.getlsatid().Rows[0];
+                if (Display.SelectedItem != null)
                 {
-
-                    try
+                    var item = Display.SelectedItem as DataRowView;
+                    if (string.IsNullOrWhiteSpace(LoginInput.Text) ||
+                                    string.IsNullOrWhiteSpace(PasswordInput.Text) ||
+                                    string.IsNullOrWhiteSpace(IDInput.Text) ||
+                                    !IDInput.Text.Any(x => char.IsDigit(x)) ||
+                                    LoginInput.Text.Any(x => char.IsControl(x)) ||
+                                    PasswordInput.Text.Any(x => char.IsControl(x)) ||
+                                    IDInput.Text.Any(x => char.IsControl(x)))
+                        ErrorMessage.Text = "Вы заполнили не все поля";
+                    else
                     {
-                        auth.UpdateQuery(Convert.ToInt32(IDInput.Text), LoginInput.Text, PasswordInput.Text, (int)item[0]);
-                        updated();
-                        AdditionalInfo();
+
+                        try
+                        {
+                            auth.UpdateQuery(Convert.ToInt32(IDInput.Text), LoginInput.Text, PasswordInput.Text, (int)item[0]);
+                            updated();
+                            AdditionalInfo();
+                        }
+                        catch (Exception) { ErrorMessage.Text = "Вы ввели неверные значения"; };
                     }
-                    catch (Exception ) { ErrorMessage.Text = "Вы ввели неверные значения"; };
                 }
             }
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var item = Display.SelectedItem as DataRowView;
-            auth.DeleteQuery((int)item[0]);
+            if (Display.SelectedItem != null)
+            {
+                var item = Display.SelectedItem as DataRowView;
+                auth.DeleteQuery((int)item[0]);
+            }
         }
         private void Display_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -87,6 +105,7 @@ namespace laba5
                 var item = Display.SelectedItem as DataRowView;
                 LoginInput.Text = (string)item[1];
                 PasswordInput.Text = (string)item[2];
+                IDInput.Text = Convert.ToString((int)item[0]);
                 ErrorMessage.Text = string.Empty;
             }
         }

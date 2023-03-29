@@ -42,7 +42,7 @@ namespace laba5.admin_panel.subpanels
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NameInput.Text))
+            if (string.IsNullOrWhiteSpace(NameInput.Text) || NameInput.Text.Any(x => char.IsControl(x)))
                 ErrorMessage.Text = "Вы заполнили не все поля";
             else
             {
@@ -57,17 +57,20 @@ namespace laba5.admin_panel.subpanels
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NameInput.Text))
-                ErrorMessage.Text = "Вы заполнили не все поля";
-            else
+            if (Display.SelectedItem != null)
             {
-                var item = Display.SelectedItem as DataRowView;
-                try
+                if (string.IsNullOrWhiteSpace(NameInput.Text) || NameInput.Text.Any(x => char.IsControl(x)))
+                    ErrorMessage.Text = "Вы заполнили не все поля";
+                else
                 {
-                    job.UpdateQuery(NameInput.Text, (int)item[0]);
-                    updated();
+                    var item = Display.SelectedItem as DataRowView;
+                    try
+                    {
+                        job.UpdateQuery(NameInput.Text, (int)item[0]);
+                        updated();
+                    }
+                    catch (Exception) { ErrorMessage.Text = "Вы ввели неверные значения"; }
                 }
-                catch (Exception) { ErrorMessage.Text = "Вы ввели неверные значения"; }
             }
         }
 
@@ -84,6 +87,7 @@ namespace laba5.admin_panel.subpanels
         }
         private void updated()
         {
+            Display.ItemsSource = null;
             Display.ItemsSource = job.GetData();
             ErrorMessage.Text = String.Empty;
         }
@@ -91,8 +95,11 @@ namespace laba5.admin_panel.subpanels
         private void InsertJson_Click(object sender, RoutedEventArgs e)
         {
             List<JobTitleModel> forimport = Converter.DeserializeObject<List<JobTitleModel>>();
-            foreach (var item in forimport)
-                job.InsertQuery(item.Name);
+            if (forimport != null)
+            {
+                foreach (var item in forimport)
+                    job.InsertQuery(item.Name);
+            }
         }
     }
 }

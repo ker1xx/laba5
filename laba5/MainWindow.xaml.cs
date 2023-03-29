@@ -53,13 +53,13 @@ namespace laba5
                 {
                     if (role == 1)
                     {
-                        AdminPanel adminPanel = new AdminPanel();
+                        AdminPanel adminPanel = new AdminPanel(this);
                         this.Visibility = Visibility.Hidden;
                         adminPanel.ShowDialog();
                     }
                     else if (role == 2)
                     {
-                        CashierPanel cashierPanel = new CashierPanel();
+                        CashierPanel cashierPanel = new CashierPanel(this);
                         this.Visibility = Visibility.Collapsed;
                         cashierPanel.ShowDialog();
                     }

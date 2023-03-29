@@ -47,7 +47,11 @@ namespace laba5
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(CountryInput.Text))
+            if (string.IsNullOrWhiteSpace(NameInput.Text) || 
+                string.IsNullOrWhiteSpace(CountryInput.Text) || 
+                CountryInput.Text.Any(x => char.IsDigit(x)) ||
+                NameInput.Text.Any(x => char.IsControl(x)) ||
+                CountryInput.Text.Any(x => char.IsControl(x)))
                 ErrorMessage.Text = "Вы заполнили не все поля";
             else
             {
@@ -63,8 +67,11 @@ namespace laba5
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(NameInput.Text) || string.IsNullOrWhiteSpace(CountryInput.Text))
-                ErrorMessage.Text = "Вы заполнили не все поля";
+            if (string.IsNullOrWhiteSpace(NameInput.Text) ||
+                            string.IsNullOrWhiteSpace(CountryInput.Text) ||
+                            CountryInput.Text.Any(x => char.IsDigit(x)) ||
+                            NameInput.Text.Any(x => char.IsControl(x)) ||
+                            CountryInput.Text.Any(x => char.IsControl(x))) ErrorMessage.Text = "Вы заполнили не все поля";
             else
             {
                 var item = Display.SelectedItem as DataRowView;
@@ -103,8 +110,11 @@ namespace laba5
         private void InsertJson_Click(object sender, RoutedEventArgs e)
         {
             List<DealersModel> forimport = Converter.DeserializeObject<List<DealersModel>>();
-            foreach (var item in forimport)
-                dealers.InsertQuery(item.Name, item.Country);
+            if (forimport != null)
+            {
+                foreach (var item in forimport)
+                    dealers.InsertQuery(item.Name, item.Country);
+            }
         }
     }
 }

@@ -19,9 +19,11 @@ namespace laba5
     /// </summary>
     public partial class CashierPanel : Window
     {
-        public CashierPanel()
+        MainWindow mainWindow;
+        public CashierPanel(MainWindow mainWindow)
         {
             InitializeComponent();
+            this.mainWindow = mainWindow;
         }
 
         private void NewOrder_Click(object sender, RoutedEventArgs e)
@@ -32,6 +34,12 @@ namespace laba5
         private void PreviousOrders_Click(object sender, RoutedEventArgs e)
         {
             Frame.Content = new HistoryOfOrders();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            mainWindow.Visibility = Visibility.Visible;
+
         }
     }
 }

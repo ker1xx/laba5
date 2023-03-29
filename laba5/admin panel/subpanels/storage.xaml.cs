@@ -76,7 +76,7 @@ namespace laba5
         private void UpdateButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(AmountInput.Text) || string.IsNullOrWhiteSpace(FirstPriceInput.Text) ||
-    AmountInput.Text.Any(x => char.IsDigit(x)) || FirstPriceInput.Text.Any(x => char.IsDigit(x))
+    !AmountInput.Text.Any(x => char.IsDigit(x)) || FirstPriceInput.Text.Any(x => char.IsLetter(x))
     || ModelInput.SelectedItem == null || DealerInput.SelectedItem == null ||
                 Convert.ToInt32(AmountInput.Text) <= 0 || Convert.ToDecimal(FirstPriceInput.Text) <= 0 || !Regex.IsMatch(FirstPriceInput.Text, regex))
                 ErrorMessage.Text = "Вы заполнили не все поля";
@@ -85,7 +85,7 @@ namespace laba5
                 var item = Display.SelectedItem as DataRowView;
                 try
                 {
-                    storageData.UpdateQuery((int)ModelInput.SelectedIndex, Convert.ToInt32(AmountInput.Text), (int)DealerInput.SelectedIndex, Convert.ToInt32(FirstPriceInput.Text), (int)item[0]);
+                    storageData.UpdateQuery(Convert.ToInt32(ModelInput.SelectedValue), Convert.ToInt32(AmountInput.Text), Convert.ToInt32(DealerInput.SelectedValue), Convert.ToDecimal(FirstPriceInput.Text), Convert.ToInt32(item[0]));
                     updated();
                     AdditionalInfo();
                 }
@@ -117,7 +117,7 @@ namespace laba5
         }
         private void AdditionalInfo()
         {
-            var info = storageData.GetData();
+            var info = storageData.names();
             foreach (DataRow data in info.Rows)
             {
                 AmountOfItems += Convert.ToInt32(data[2]);
@@ -129,7 +129,7 @@ namespace laba5
         }
         private void updated()
         {
-            Display.ItemsSource = storageData.GetData();
+            Display.ItemsSource = storageData.names();
             ErrorMessage.Text = string.Empty;
         }
 
@@ -146,8 +146,11 @@ namespace laba5
         private void InsertJson_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             List<StorageModel> forimport = Converter.DeserializeObject<List<StorageModel>>();
+            if (forimport != null)
+            { 
             foreach (var item in forimport)
                 storageData.InsertQuery(item.ModelId, item.Amount,item.IdDealer, item.first_price);
+            }
         }
 
         private void GoodsButton_Click(object sender, System.Windows.RoutedEventArgs e)

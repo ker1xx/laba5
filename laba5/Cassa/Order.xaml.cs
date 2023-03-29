@@ -29,14 +29,13 @@ namespace laba5
         goodsTableAdapter goods = new goodsTableAdapter();
         List<CartItems> cart = new List<CartItems>();
         CashierPanel cartPanel;
-        orderTableAdapter order = new orderTableAdapter();
         decimal FullPrice = 0;
         int Amount = 0;
         decimal Profit = 0;
         public Order(CashierPanel cartPanel)
         {
             InitializeComponent();
-            Display.ItemsSource = goods.names();
+            Display.ItemsSource =  goods.names();
             ListedItems.ItemsSource = cart;
             this.cartPanel = cartPanel;
 
